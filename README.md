@@ -1,3 +1,4 @@
 # CS499_Goofhub
- Ricardo Daniels
-Denice Veluz
+# Ricardo Daniels
+# Quinton Negron
+# Denice Veluz
