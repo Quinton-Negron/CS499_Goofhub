@@ -1,6 +1,7 @@
 import React from 'react';
 import './App.css';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
+import { Container } from 'react-bootstrap'
 import Home from './Home';
 import SubmitJoke from './Submitjoke';
 import LogIn from './Login';
@@ -13,6 +14,7 @@ function App() {
     <Router>
       <div className="App">
         <Navibar />
+        <Container>
           <Switch>
             <Route exact path="/" component={Home} />
             <Route path="/submitjoke" component={SubmitJoke} />
@@ -20,7 +22,7 @@ function App() {
             <Route path="/signup" component={SignUp} />
             <Route path="/search" component={Search} />
           </Switch>
-     
+        </Container>
       </div>
     </Router>
     
