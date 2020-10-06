@@ -2,34 +2,32 @@ import React from 'react';
 import './Home.css';
 import JotD from './components/JotD';
 import Cards1 from './components/card'
+import { Container, Row, Col } from 'react-bootstrap'
 
-export default () =>
-        <div class="container">
-            <div class="row justify-content-lg-center">
-            <div class="col-20">
-                <span className='position'>
-                    <JotD />
-                </span>
-            </div>
-            </div>
-           
+function Home(){
+    return(
+        <Container>
+        <br></br>
+        
+        <Row lg={3}>  
+            <Col md={4}></Col>  
+            <Col md={4}><JotD /></Col>
+            <Col md={4}></Col>
+        </Row>
+      
+
+        <h1 className="inner-container">What kind of laugh are you looking for?</h1>
+        <Cards1 />
+    
+        </Container>
+                
+    );
+}   
+
+export default Home;
        
             
-                <div class="row justify-content-md-flex-initial">
-                <div class="col-10">
-                    <div className='inner-container'> 
-                        <h1>What kind of laugh are you looking for?</h1>
-                    </div>
-                </div>
-                </div>
-           
-
                 
-                <div class="row justify-content-lg-center">
-                <div class="col-lxg-20">
-                    <Cards1 />
-                </div>
-                </div>
-        </div>
+       
                  
     
