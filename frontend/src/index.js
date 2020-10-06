@@ -4,6 +4,12 @@ import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
 
+import './fonts/Blockletter.ttf';
+import './fonts/cartoonistkooky.ttf';
+import './fonts/builttitlingrg.ttf';
+import './fonts/ColunaRounded.ttf';
+
+
 
 
 ReactDOM.render(
