@@ -9,11 +9,17 @@ import SignUp from './Signup';
 import Search from './Search';
 import Navibar from './components/Navibar';
 
+import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
+
+
+
+
+
 function App() {
   return (
     <Router>
-      <div className="App">
-        <Navibar />
+      
+      <Navibar />
         <Container>
           <Switch>
             <Route exact path="/" component={Home} />
@@ -23,7 +29,7 @@ function App() {
             <Route path="/search" component={Search} />
           </Switch>
         </Container>
-      </div>
+     
     </Router>
     
   );

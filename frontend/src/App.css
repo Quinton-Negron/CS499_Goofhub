@@ -1,4 +1,12 @@
 body {
-  background-color: #fcef50 !important;
+  background-color: rgb(255, 230, 1) !important;
 }
 
+.Home {
+  margin-inline-start: 0mm;
+  margin-top: 50mm;
+}
+
+.Home-font {
+  font-family: 'BuiltTitlingRg-Regular';
+}

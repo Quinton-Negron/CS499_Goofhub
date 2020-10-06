@@ -1,14 +1,27 @@
 .nav-color {
-    background-color: #fcef50 !important;
+    background-color: rgb(255, 235, 51) !important;
+    height: 100px;
     
   }
   .nav-font {
-    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-    font-size: large;
+    font-family: 'BuiltTitlingRg-Regular';
+    font-size: x-large;
   }
   
   .nav-siteName {
-    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
-    align-items: stretch;
+    font-size: x-large;
+    font-family: 'ColunaRounded-CondensedBold';
     font-style: oblique;
+  }
+
+  .header-container {
+    display: flex;
+    flex-direction: column;
+    width: 36%;
+  }
+
+  .subheader {
+    margin-left: 30px;
+    margin-top: -28px;
+    font-family: 'Blockletter';
   }
