@@ -8,10 +8,6 @@ import SignUp from './Signup';
 import Search from './Search';
 import Navibar from './components/Navibar';
 
-import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
-
-
-
 function App() {
   return (
     <Router>
