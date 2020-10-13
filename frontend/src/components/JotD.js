@@ -2,6 +2,7 @@ import React from 'react';
 import './JotD.css';
 import { Card } from 'react-bootstrap';
 
+
 const JotD = props => ( 
     <Card className="jotd">
             <Card.Body>
