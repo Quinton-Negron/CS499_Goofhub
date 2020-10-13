@@ -1,37 +1,12 @@
-.header {
-    font-family: 'CartoonistKooky';
-    padding-bottom: 10px;
-}
-
 .subheader1 {
     font-family:'BuiltTitlingRg-Regular';
     font-size: xx-large;
-    padding-bottom: 10px;
-}
-
-.subheader2 {
-    font-family:'BuiltTitlingRg-Regular';
-    font-size: xx-large;
-    padding-bottom: 10px;
-}
-
-
-.line {
-    margin-top: -31px;
-    margin-right: -12px;
-    margin-left: -18px;
 }
 
 .jotd{
     background-color: rgb(255, 235, 51) !important;
     font-family: 'CartoonistKooky';
-    width: 29rem;
-   
-}
-
-.jotd-body {
-    padding: 2rem 0 !important;
-    margin-left: 1rem;
+      
 }
 
 .card-body {

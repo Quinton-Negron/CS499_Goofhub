@@ -10,9 +10,9 @@ function Home(){
         <br></br>
         
         <Row lg={3}>  
-            <Col md={4}></Col>  
-            <Col md={4}><JotD /></Col>
-            <Col md={4}></Col>
+            <Col  md={2} lg={3}></Col>  
+            <Col  md={8} lg={6}><JotD /></Col>
+            <Col  md={2} lg={3}></Col>
         </Row>
       
 

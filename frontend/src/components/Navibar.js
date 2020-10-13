@@ -13,8 +13,7 @@ function Navibar() {
           <Nav.Link href="/">
             <Navbar.Brand>
               <div className="header-container">
-                <h1><font size="100">G</font>OOF-<font size="30">H</font>UB
-                </h1>
+                <h1><font size="100">G</font>OOF-<font size="30">H</font>UB</h1>
                   <span className="subheader"> The world of jokes </span>
               </div>
             </Navbar.Brand>
@@ -30,7 +29,7 @@ function Navibar() {
               <NavDropdown.Item href="Login">LOG IN</NavDropdown.Item>
               <NavDropdown.Item href="Signup">SIGN UP</NavDropdown.Item>
               </NavDropdown>
-          </Nav>
+         
           
           <Form inline>
             <Nav.Link href="Search">
@@ -41,7 +40,7 @@ function Navibar() {
             </Nav.Link>
            
           </Form>
-         
+          </Nav>
         </Navbar.Collapse>
         
       </Navbar>

@@ -12,13 +12,13 @@ const JotD = props => (
                 height="37"
                 className="nav-siteName d-inline-block align-center" 
               /> {' '}</h1></center></Card.Title>
-                <Card.Subtitle className="mb-2 text-muted">
-                    <center>____________________________________________________</center>
+                <Card.Subtitle className="mb-3 mr-0 ml-0">
+                    <center>__________________________________________________</center>
                 </Card.Subtitle>
                 <Card.Text>
                     <div className='subheader1'>
-                        <center><i><b>Q:</b> Why do programmers wear glasses?</i></center></div>
-                <div className= "subheader2">
+                        <center><i><b>Q:</b> Why do programmers wear glasses?</i></center>
+                
                 <center><i><b>A:</b> Because they can't C# </i> </center>                   
                 </div>
                 </Card.Text>
