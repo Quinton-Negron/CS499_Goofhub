@@ -1,11 +1,25 @@
 import React from 'react';
+import Subjokeheader from'./components/SubJokeheader';
+import JokeSubmission from './components/JokeSubmission';
 
-function SubmitJoke() {
-    return (
-        <div className='SubmitJoke'>
-            <h1>Submit a Joke</h1>
+
+
+export default () =>
+ 
+    <div class="container">
+            <div class="row">
+            <div class="col">
+                <Subjokeheader />   
+            </div>
+            </div>
+           
+                <div class="row">
+                <div class="col">
+                    <div className='lower'> 
+                    <JokeSubmission />
+                    </div>
+                </div>
+                </div>
+    
         </div>
-    );
-}
-
-export default SubmitJoke;
+                 
