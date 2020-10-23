@@ -17,7 +17,7 @@ const Cards1 = props => (
             <Col>
     <CardDeck>
   <Card className="categories">
-    <Card.Img src={img1} alt="Card image" />  
+    <Card.Img className = "types" src={img1} alt="Card image" />  
     <Card.Body>
     <Button
           size="xlg"
@@ -37,7 +37,7 @@ const Cards1 = props => (
   </Card>
 
   <Card className="categories">
-  <Card.Img src={img2} alt="Card image" />  
+  <Card.Img className = "types" src={img2} alt="Card image" />  
     <Card.Body>
     <Button
           size="xlg"
@@ -58,7 +58,7 @@ const Cards1 = props => (
 
 
   <Card className="categories">
-  <Card.Img src={img3} alt="Card image" />  
+  <Card.Img className = "types" src={img3} alt="Card image" />  
     <Card.Body>
     <Button
           size="xlg"
@@ -78,7 +78,7 @@ const Cards1 = props => (
   </Card>
 
   <Card className="categories">
-  <Card.Img src={img4} alt="Card image" />  
+  <Card.Img className = "types" src={img4} alt="Card image" />  
     <Card.Body>
     <Button
           size="xlg"

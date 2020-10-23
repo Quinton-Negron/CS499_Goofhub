@@ -1,10 +1,11 @@
 import React from 'react';
 import './JotD.css';
-import { Card } from 'react-bootstrap';
+import { Card, Container } from 'react-bootstrap';
 
 
 const JotD = props => ( 
     <Card className="jotd">
+        <Container className ="borderjoke">
             <Card.Body>
                 <Card.Title><center><h1>Joke of the Day!  <img
                 alt=""
@@ -23,7 +24,7 @@ const JotD = props => (
                 <center><i><b>A:</b> Because they can't C# </i> </center>                   
                 </div>
                 </Card.Text>
-            </Card.Body>
+            </Card.Body></Container>
             </Card>
     )
 export default JotD;
