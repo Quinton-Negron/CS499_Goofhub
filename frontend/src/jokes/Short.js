@@ -7,7 +7,7 @@ import {useFetch} from '../useFetch';
 function Short() {
     //change title accordingly.
     const title = 'Short';
-    const jokes = useFetch('http://localhost:3000/data.json');
+    const jokes = useFetch('http://localhost:3006/data.json');
     //console.log(jokes);
     
     //change category name based on data.
