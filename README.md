@@ -1,8 +1,8 @@
 # CS499_Goofhub
 ### Ricardo Daniels
+### Mei Tak Lee
 ### Quinton Negron
 ### Denice Veluz
-### Mei Tak Lee
 
 Frontend: React-Bootstrap Web App <br />
 Application used: Nodejs, React-Bootstrap, React Router, Auth0 <br />
