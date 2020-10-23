@@ -1,0 +1,18 @@
+.banner {
+    padding-top: 20px;
+    padding-bottom: 20px;
+    background-color: gold;
+    background-size: cover;
+    /*background-image: url;*/
+    border: 3px black solid;
+    vertical-align: middle;
+    text-align: center;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+    letter-spacing: 4px;
+}
+
+
+
+
+
+

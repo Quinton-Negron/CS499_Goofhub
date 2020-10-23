@@ -1,0 +1,15 @@
+/*Settings for all*/
+.jokebox1 {
+    background-color: gold !important;
+    margin-bottom: 10px;
+    box-shadow: gray;
+    border-width: 1px 3px 3px 1px;
+}
+/*.cardtext1 {
+    border: 2px black solid;
+}*/
+
+/*Settings for images*/
+.jokebox2 {
+    border: 1px solid black;
+}

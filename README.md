@@ -1,17 +1,17 @@
 # CS499_Goofhub
-# Ricardo Daniels
-# Quinton Negron
-# Denice Veluz
-# Mei Tak Lee
+### Ricardo Daniels
+### Quinton Negron
+### Denice Veluz
+### Mei Tak Lee
 
-Frontend: React-Bootstrap Web App
-Application used: Nodejs, React-Bootstrap, React Router, Auth0
-Instructions:
-Install nodejs at https://nodejs.org/en/download/
-Clone/pull from github in your terminal. Go into frontend folder.
-cd frontend
-npm install react-bootstrap bootstrap
-npm install react-router-dom
-npm install @auth0/auth0-react
+Frontend: React-Bootstrap Web App <br />
+Application used: Nodejs, React-Bootstrap, React Router, Auth0 <br />
+Instructions: <br />
+Install nodejs at https://nodejs.org/en/download/ <br />
+Clone/pull from github in your terminal. Go into frontend folder. <br />
+cd frontend <br />
+npm install react-bootstrap bootstrap <br />
+npm install react-router-dom <br />
+npm install @auth0/auth0-react <br />
 A folder should appear called node_modules
-npm start
+npm start <br />
