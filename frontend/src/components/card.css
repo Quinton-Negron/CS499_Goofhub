@@ -19,7 +19,7 @@
 .categories-text{
     font-size: .9rem;
     padding: 0.4rem 1.9rem;
-}
+} 
 
 /* .container-fluid .row{
     padding-top: 6rem;
@@ -67,11 +67,3 @@
 
 
 
-@media (min-width: 576px){ 
-    .btn-xlg{
-        display: flex;
-        flex-flow: row wrap;
-        margin-right: -90px;
-        margin-left: -50px;
-        }
-    }

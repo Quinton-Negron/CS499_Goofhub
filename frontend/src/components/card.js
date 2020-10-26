@@ -13,12 +13,17 @@ const Cards1 = props => (
             <Col>
     <CardDeck>
   <Card className="categories">
-    <Card.Img className = "types" src="https://firebasestorage.googleapis.com/v0/b/goofhub-team.appspot.com/o/app%2Fcomic.jpg?alt=media&token=56412996-a593-46c6-86be-6ac7d767fbe5" alt="Card image" />  
+    <Card.Img 
+    className = "types" 
+    src="https://firebasestorage.googleapis.com/v0/b/goofhub-team.appspot.com/o/app%2Fcomic.jpg?alt=media&token=56412996-a593-46c6-86be-6ac7d767fbe5" 
+    alt="Card image" />
+    <a className = 'link' href="#" class="btn btn-primary stretched-link">
     <Card.Body>
     <Button
           size="xlg"
           style={{
             position: "absolute",
+            textAlign: "center",
             top: "328px",
             right: "13px",
             left: "-375px",
@@ -29,11 +34,15 @@ const Cards1 = props => (
         >
           <i>COMICS</i>
         </Button>
-    </Card.Body>
+    </Card.Body></a>  
   </Card>
 
   <Card className="categories">
-  <Card.Img className = "types" src="https://firebasestorage.googleapis.com/v0/b/goofhub-team.appspot.com/o/app%2Fvideo.jpg?alt=media&token=cd0c4126-b696-4490-825d-c0219ffb75af" alt="Card image" />  
+  <Card.Img 
+  className = "types" 
+  src="https://firebasestorage.googleapis.com/v0/b/goofhub-team.appspot.com/o/app%2Fvideo.jpg?alt=media&token=cd0c4126-b696-4490-825d-c0219ffb75af" 
+  alt="Card image" />  
+  <a className = 'link' href="#" class="btn btn-primary stretched-link">
     <Card.Body>
     <Button
           size="xlg"
@@ -49,12 +58,16 @@ const Cards1 = props => (
         >
           <center><i>VIDEOS</i></center>
         </Button>
-    </Card.Body>
+    </Card.Body></a>
   </Card>
 
 
   <Card className="categories">
-  <Card.Img className = "types" src="https://firebasestorage.googleapis.com/v0/b/goofhub-team.appspot.com/o/app%2FText.png?alt=media&token=9dab6406-525b-4ebc-a0d5-091a1860bb37" alt="Card image" />  
+  <Card.Img 
+  className = "types" 
+  src="https://firebasestorage.googleapis.com/v0/b/goofhub-team.appspot.com/o/app%2FText.png?alt=media&token=9dab6406-525b-4ebc-a0d5-091a1860bb37" 
+  alt="Card image" />  
+  <a className = 'link' href="Short" class="btn btn-primary stretched-link">
     <Card.Body>
     <Button
           size="xlg"
@@ -70,11 +83,15 @@ const Cards1 = props => (
         >
           <center><i>QUICK</i></center>
         </Button>
-    </Card.Body>
+    </Card.Body></a>
   </Card>
 
   <Card className="categories">
-  <Card.Img className = "types" src="https://firebasestorage.googleapis.com/v0/b/goofhub-team.appspot.com/o/app%2Fadult.jpg?alt=media&token=751fe2a6-d9be-4ff3-ba02-a1ce12d3b0e0" alt="Card image" />  
+  <Card.Img 
+  className = "types" 
+  src="https://firebasestorage.googleapis.com/v0/b/goofhub-team.appspot.com/o/app%2Fadult.jpg?alt=media&token=751fe2a6-d9be-4ff3-ba02-a1ce12d3b0e0" 
+  alt="Card image" />  
+  <a className = 'link' href="#" class="btn btn-primary stretched-link">
     <Card.Body>
     <Button
           size="xlg"
@@ -90,7 +107,7 @@ const Cards1 = props => (
         >
           <i>ADULT</i>
         </Button>
-    </Card.Body>
+    </Card.Body></a>
   </Card>
 </CardDeck>
 
