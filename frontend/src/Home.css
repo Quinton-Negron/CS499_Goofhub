@@ -1,26 +1,7 @@
-.inner-container {
-    display: flex;
-    flex-direction: column;
+.home-container {
     padding-top: -100%;
-    margin-left: -117px;
     font-family: 'BuiltTitlingRg-Regular';
     margin-top: 1rem;
-}
-
-.position {
-    display:flex;
-    margin-top: 1.5rem;
-}
-
-.span {
-    display: flex;
-    margin-left: 20rem;
-}
-
-.row {
-    display: flex;
-    flex-wrap:wrap;
-    
 }
 
 

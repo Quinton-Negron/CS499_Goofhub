@@ -9,21 +9,18 @@ const JotD = props => (
             <Card.Body>
                 <Card.Title><center><h1>Joke of the Day!  <img
                 alt=""
-                src="/laugh.png"
+                src="https://firebasestorage.googleapis.com/v0/b/goofhub-team.appspot.com/o/app%2Flaugh.png?alt=media&token=e12ba2c4-e1a3-4a5e-88bc-3f7b28fca8b9"
                 width="37"
                 height="37"
-                className="nav-siteName d-inline-block align-center" 
-              /> {' '}</h1></center></Card.Title>
-                <Card.Subtitle className="mb-3 mr-0 ml-0">
-                    <center>__________________________________________________</center>
-                </Card.Subtitle>
-                <Card.Text>
-                    <div className='subheader1'>
-                        <center><i><b>Q:</b> Why do programmers wear glasses?</i></center>
-                
-                <center><i><b>A:</b> Because they can't C# </i> </center>                   
-                </div>
-                </Card.Text>
+                className=" d-inline-block align-center" 
+            /> {' '}</h1></center>
+            <div className="jotdivider divider"></div>
+            <div className='subheader1'>
+                <center><i>Q: Why do programmers wear glasses?</i></center>
+            
+                <center><i>A: Because they can't C# </i> </center>                   
+            </div>
+            </Card.Title>
             </Card.Body></Container>
             </Card>
     )

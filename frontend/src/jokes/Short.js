@@ -7,14 +7,16 @@ import {useFetch} from '../useFetch';
 function Short() {
     //change title accordingly.
     const title = 'Short';
-    const jokes = useFetch('http://localhost:3009/data.json');
-    //console.log(jokes);
+    //const jokes = useFetch('http://localhost:3001/data.json');
     
+    const jokes = useFetch('jokes');
+    //console.log(jokes);
     //change category name based on data.
     const category = 'short';
     /*Filter jokes to a category for each page. 
     Displays on revsersed order*/
-    const items = jokes.filter(joke => joke.category===category).reverse().map((data) => {
+    const results = jokes.filter(word => word.category.some(data => data === category));
+    const items = results.reverse().map((data) => {
         switch (data.type){
             case data.type='image': 
                 return (<Col md={4} key={data.id}><Imagejokes data={data}/></Col>) ;

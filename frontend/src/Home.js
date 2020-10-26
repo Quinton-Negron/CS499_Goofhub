@@ -16,7 +16,7 @@ function Home(){
         </Row>
       
 
-        <h1 className="inner-container">What kind of laugh are you looking for?</h1>
+        <h1 className="home-container">What kind of laugh are you looking for?</h1>
         <Cards1 />
         <h4><a href="Short">Short Jokes</a></h4>
         </Container>
