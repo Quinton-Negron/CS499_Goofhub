@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import './components/Searchbar.css';
 import { Container, Row, Col } from 'react-bootstrap';
 import { Imagejokes,Textjokes,Videojokes } from './components/Jokecard';
-import firebase from "./firebase/firebase";
+import { db }from "./firebase/firebase";
 
 
 function Search() {
@@ -12,8 +12,8 @@ function Search() {
     const [jokes, setJokes] = useState([]);
 
     useEffect(() => {
-        firebase.firestore()
-            .collection('jokes')
+       
+            db.collection('jokes')
             .onSnapshot((snapshot) => {
                 const newJokes = snapshot.docs.map((doc) => ({
                     id: doc.id,...doc.data()

@@ -15,3 +15,7 @@
 .submitheader {
     border-radius: 1rem;
 }
+
+.submitheader {
+    border-style: solid;
+}

@@ -1,5 +1,5 @@
 import React from 'react';
-import firebase from "./firebase";
+import { db } from "./firebase";
 
 function addData() {
     return(
@@ -9,7 +9,7 @@ function addData() {
 //collection = table
 //doc = id (primary key) string
 //add one document only
-firebase.firestore().collection("jokes").doc('3').set(
+db.collection("jokes").doc('3').set(
 /*{
     content: "What’s the best thing about Switzerland? I don’t know, but the flag is a big plus.",
     name: "Goofer",

@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import firebase from "./firebase/firebase";
+import { db } from "./firebase/firebase";
 
 //const [jokes, setJokes] = useState([]);
 //const [loading, setLoading] = useState(false);
@@ -9,8 +9,7 @@ export function useFetch(table) {
     const [jokes, setJokes] = useState([]);
     
     useEffect(() => {
-        firebase.firestore()
-            .collection(table)
+        db.collection(table)
             .onSnapshot((snapshot) => {
                 const newJokes = snapshot.docs.map((doc) => ({
                     id: doc.id,...doc.data()

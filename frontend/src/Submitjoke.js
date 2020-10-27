@@ -1,6 +1,6 @@
 import React from 'react';
 import Subjokeheader from'./components/SubJokeheader';
-import JokeSubmission from './components/JokeSubmission';
+import JokeSubmission from './firebase/JokeSubmission';
 
 
 
