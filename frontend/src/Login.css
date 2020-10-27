@@ -4,7 +4,7 @@
     margin-right: auto;
     margin-left: auto;
     width: 450px;
-    height: 36rem;
+    height: 40rem;
     padding-left: 5px;
     align-items: center;
     padding-top: 45px;
@@ -20,14 +20,24 @@
     font-family: 'BuiltTitlingRg-Regular';
     text-align: center;
     
+    
 }
 
-.divider {
+.divider1 {
     margin-top: -7px;
     margin-bottom: 23px;
     margin-left: -10px;
     margin-right: -10px;
     border-style: double;
+    background-color: gray;
+}
+.divider2 {
+    margin-top: 24px;
+    margin-bottom: -20px;
+    margin-left: -10px;
+    margin-right: -10px;
+    border-style: double;
+    background-color: gray;
 }
 
 .enter {

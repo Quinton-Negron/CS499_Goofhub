@@ -2,15 +2,16 @@ import React from 'react';
 import './Login.css'
 import { Card, Container, Button, Form } from 'react-bootstrap';
 
-const Login = props => ( 
+function LogIn() {
+    return (
    <Form>
-        <div className='lower'> <Container className = 'responsive'>
+        <Container className = 'responsive'>
         <Card className="login">
-            <Card.Body className>
+            <Card.Body>
                 <Card.Title className= "email">
                 <h3 style={{ color: 'white', fontSize: '70px' }}>
-                    login
-                </h3><div className="divider"></div>
+                    log in
+                </h3><div className="divider1"></div>
                 </Card.Title>
 
                 <Card.Title>
@@ -19,27 +20,27 @@ const Login = props => (
                     </h3>
                 <Card.Subtitle className="emailaddress">
                     <Form.Group controlId="formBasicEmail">
-                    <Form.Control type="email" placeholder="Enter email" />
-                    <Form.Text className="text-muted">
-                    your email is safe with us.
+                    <Form.Control className="" type="email" placeholder="ENTER EMAIL" />
+                    <Form.Text className="text-light">
+                    your email is safe with us
                     </Form.Text>
                     </Form.Group>
 
-                <Card.Title>
+                
                 <h3 style={{ color: 'white', fontSize: '35px' }}>
                     password
                 </h3>
-                <Card.Subtitle className="emailaddress">
+                
                     <Form.Group controlId="formBasicPassword">
-                    <Form.Control type="password" placeholder="Password" />
-                    </Form.Group></Card.Subtitle>
-                </Card.Title>
+                    <Form.Control type="password" placeholder="Enter Password" />
+                    </Form.Group>
+               
                 </Card.Subtitle>
                 </Card.Title>
 
-                <div class="container">
-                <div class="row justify-content-lg-center">
-                <div class="col-20">
+                <div className="container">
+                <div className="row justify-content-lg-center">
+                <div className="col-20">
                         <Button
                         className ="enter"
                             size="lg"
@@ -48,7 +49,18 @@ const Login = props => (
                             }}
                             variant="warning"
                             block
-                            > Login
+                            > Log in
+                        </Button>
+                        <div className="divider2"></div>
+                        <Button
+                        className ="enter"
+                            size="lg"
+                            style={{
+                                width: "350px"
+                            }}
+                            variant="warning"
+                            block
+                            > SIGN UP HERE
                         </Button>
                     </div>
                 </div>
@@ -56,7 +68,7 @@ const Login = props => (
                 
         </Card.Body>
     </Card></Container>
-    </div></Form>
-)
-    
-export default Login;
+   </Form>
+    );
+}
+export default LogIn;

@@ -22,8 +22,10 @@ function Short() {
                 return (<Col md={4} key={data.id}><Imagejokes data={data}/></Col>) ;
             case data.type='video': 
                 return (<Col md={4} key={data.id}><Videojokes data={data}/></Col>) ;
+            case data.type='text': 
+                return (<Col md={4} key={data.id}><Textjokes  data={data}/></Col>)
             default: 
-                return (<Col md={4} key={data.id}><Textjokes data={data}/></Col>);     
+                return (<Col md={4} key={data.id}><Textjokes  data={data}/></Col>)     
         }
         
     })
