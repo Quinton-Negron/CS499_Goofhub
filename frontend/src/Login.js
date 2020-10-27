@@ -56,7 +56,6 @@ const Login = props => (
                 
         </Card.Body>
     </Card></Container>
-
     </div></Form>
 )
     
