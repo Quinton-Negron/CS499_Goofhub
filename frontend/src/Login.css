@@ -1,0 +1,43 @@
+.login {
+    background-color: rgb(0, 0, 0) !important;
+    font-family: 'BuiltTitlingRg-Regular';
+    font-stretch: expanded;
+    margin-right: auto;
+    margin-left: auto;
+    display: flex;
+    width: 450px;
+    height: 36rem;
+    padding-left: 5px;
+    align-items: center;
+    padding-top: 45px;
+    box-shadow: 2px 10px 30px 10px rgb(90, 94, 94);
+}
+
+.responsive {
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    margin-top: 90px;
+    flex-direction: row;
+    
+}
+
+
+.email {
+    font-family: 'BuiltTitlingRg-Regular';
+    text-align: center;
+    font-stretch: expanded;
+}
+
+.divider {
+    margin-top: -7px;
+    margin-bottom: 23px;
+    margin-left: -10px;
+    margin-right: -10px;
+    border-style: double;
+}
+
+.enter {
+    margin-top: 40px;
+    
+}
