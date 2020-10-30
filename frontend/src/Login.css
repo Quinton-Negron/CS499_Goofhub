@@ -18,8 +18,7 @@
 
 .email {
     font-family: 'BuiltTitlingRg-Regular';
-    text-align: center;
-    
+    text-align: center;   
     
 }
 
@@ -31,6 +30,7 @@
     border-style: double;
     background-color: gray;
 }
+
 .divider2 {
     margin-top: 24px;
     margin-bottom: -20px;
