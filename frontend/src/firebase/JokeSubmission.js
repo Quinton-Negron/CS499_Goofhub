@@ -52,10 +52,10 @@ return (
             value={Category}
             onChange={(e) => setCategory(e.target.value)}>
             <option selected>SELECT A CATEGORY</option>
-                <option value="Comics">LONG</option>
-                <option value ="Videos">MUSIC</option>
-                <option value = "Quick">Quick</option>
-                <option value = "Adult">HOLIDAY</option>
+                <option value="long">LONG</option>
+                <option value ="music">MUSIC</option>
+                <option value = "short">Quick</option>
+                <option value = "holiday">HOLIDAY</option>
             </select>
             </Card> 
             </Card.Title>
