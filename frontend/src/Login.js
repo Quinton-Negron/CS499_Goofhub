@@ -4,71 +4,58 @@ import { Card, Container, Button, Form } from 'react-bootstrap';
 
 function LogIn() {
     return (
-   <Form>
-        <Container className = 'responsive'>
+   
+        <Container>
         <Card className="login">
             <Card.Body>
-                <Card.Title className= "email">
-                <h3 style={{ color: 'white', fontSize: '70px' }}>
-                    log in
-                </h3><div className="divider1"></div>
-                </Card.Title>
-
-                <Card.Title>
-                    <h3 style={{ color: 'white', fontSize: '35px' }}>
-                        email address
-                    </h3>
-                <Card.Subtitle className="emailaddress">
-                    <Form.Group controlId="formBasicEmail">
-                    <Form.Control className="" type="email" placeholder="ENTER EMAIL" />
-                    <Form.Text className="text-light">
-                    your email is safe with us
-                    </Form.Text>
-                    </Form.Group>
-
-                
-                <h3 style={{ color: 'white', fontSize: '35px' }}>
-                    password
-                </h3>
-                
-                    <Form.Group controlId="formBasicPassword">
-                    <Form.Control type="password" placeholder="Enter Password" />
-                    </Form.Group>
-               
-                </Card.Subtitle>
-                </Card.Title>
-
-                <div className="container">
-                <div className="row justify-content-lg-center">
-                <div className="col-20">
-                        <Button
-                        className ="enter"
-                            size="lg"
-                            style={{
-                                width: "350px"
-                            }}
-                            variant="warning"
-                            block
-                            > Log in
-                        </Button>
-                        <div className="divider2"></div>
-                        <Button
-                        className ="enter"
-                            size="lg"
-                            style={{
-                                width: "350px"
-                            }}
-                            variant="warning"
-                            block
-                            > SIGN UP HERE
-                        </Button>
-                    </div>
-                </div>
-                </div>
-                
-        </Card.Body>
-    </Card></Container>
-   </Form>
+            <Form>
+            <h3 className= "email1" style={{ color: 'white', fontSize: '70px' }}>
+                log in
+            </h3><div className="divider1"></div>
+            <Form.Group className="emailaddress" controlId="formBasicEmail">
+            <Form.Label style={{ color: 'white', fontSize: '35px' }}>email address</Form.Label>
+            <Form.Control type="email" placeholder="ENTER EMAIL" />
+            <Form.Text className="text-light">
+            your email is safe with us
+            </Form.Text>
+            </Form.Group>
+            
+            <h3 style={{ color: 'white', fontSize: '35px' }}>
+                password
+            </h3>
+            <Form.Group controlId="formBasicPassword">
+            <Form.Control type="password" placeholder="Enter Password" />
+            </Form.Group>
+        
+            <Button
+                className="enter align-content-center relative"
+                size="lg"
+                variant="warning"
+                block
+                > Log in
+            </Button>
+            </Form>
+            <Button
+                className="enter1 align-content-center relative"
+                size="lg"
+                variant="warning"
+                href="Forgotpassword"
+                block
+                > FORGOT PASSWORD
+            </Button>
+            <div className="divider2"></div>
+            <Button
+                className="enter align-content-center relative"
+                size="lg"
+                variant="warning"
+                href="Signup"
+                block
+                > SIGN UP HERE
+            </Button>        
+            </Card.Body>
+        </Card>
+        </Container>
+   
     );
 }
 export default LogIn;

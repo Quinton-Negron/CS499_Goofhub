@@ -3,8 +3,9 @@
     font-family: 'BuiltTitlingRg-Regular';
     margin-right: auto;
     margin-left: auto;
+    margin-top: 90px;
     width: 450px;
-    height: 40rem;
+    
     padding-left: 5px;
     align-items: center;
     padding-top: 45px;
@@ -12,11 +13,11 @@
 }
 
 .responsive {
-    margin-top: 90px;
+    /*margin-top: 90px;*/
 }
 
 
-.email {
+.email1 {
     font-family: 'BuiltTitlingRg-Regular';
     text-align: center;
     
@@ -42,5 +43,9 @@
 
 .enter {
     margin-top: 40px;
+    width: 350px;
+}
+.enter1 {
+    margin-top: 20px;
     
 }

@@ -8,6 +8,10 @@ import SignUp from './Signup';
 import Search from './Search';
 import addData from './firebase/secretPage';
 import Short from './jokes/Short';
+import Long from './jokes/Long';
+import Music from './jokes/Music';
+import Holiday from './jokes/Holiday';
+import Plus18 from './jokes/Plus18';
 import Navibar from './components/Navibar';
 import Profile from './Profile';
 import Footer from './components/footer';
@@ -26,6 +30,10 @@ function App() {
             <Route path="/signup" component={SignUp} />
             <Route path="/search" component={Search} />
             <Route path="/short" component={Short} />
+            <Route path="/long" component={Long} />
+            <Route path="/music" component={Music} />
+            <Route path="/holiday" component={Holiday} />
+            <Route path="/plus18" component={Plus18} />
             <Route path="/secretPage" component={addData} />
           </Switch>
           

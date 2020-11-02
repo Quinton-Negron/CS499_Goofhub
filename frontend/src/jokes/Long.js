@@ -4,14 +4,14 @@ import './Jokespage.css';
 import { Imagejokes,Textjokes,Videojokes } from '../components/Jokecard';
 import {useFetch} from '../useFetch';
 
-function Short() {
+function Long() {
     //change title accordingly.
-    const title = 'Quick';
+    const title = 'Long';
     
     const jokes = useFetch('jokes');
     //console.log(jokes);
     //change category name based on data.
-    const category = 'short';
+    const category = 'long';
     /*Filter jokes to a category for each page. 
     Displays on revsersed order*/
     const results = jokes.filter(word => word.category.some(data => data === category));
@@ -43,4 +43,4 @@ function Short() {
     );
 }
 
-export default Short;
+export default Long;
