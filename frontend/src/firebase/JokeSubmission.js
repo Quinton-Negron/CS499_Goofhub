@@ -1,15 +1,15 @@
 import React from 'react';
 import './JokeSubmission.css';
-import { Card, Button, Container } from 'react-bootstrap';
+import { Card, Container } from 'react-bootstrap';
 import { db } from "./firebase";
   
-import { useState, useEffect } from "react";
+import { useState } from "react";
 
 const JokeSubmission = props => {
             const [Category, setCategory] = useState("");
-            const [profname, setProfName] = useState("");
             const [Joke, setJoke] = useState("");
             const [keywords, setKeywords] = useState("");
+            const [profilename, setProfileName] = useState("");
             const [loader, setLoader] = useState(false);
         
             const handleSubmit = (e) => {
@@ -19,9 +19,9 @@ const JokeSubmission = props => {
               db.collection("jokesubmission")
                 .add({
                   Category: Category,
-                  profname: profname,
                   Joke: Joke,
                   keywords: keywords,
+                  profilename: profilename,
                 })
                 .then(() => {
                   setLoader(false);
@@ -33,9 +33,9 @@ const JokeSubmission = props => {
                 });
           
               setCategory("");
-              setProfName("");
               setJoke("");
               setKeywords("");
+              setProfileName("");
             };
     
 return (
@@ -90,7 +90,30 @@ return (
             </Card>
             </Card.Title></Container>
 
+            <Container className = "submitjokebox">
             <Card.Title>
+                <h3 style={{ color: 'white', fontSize: '35px' }}>
+                    to whom shall we credit?
+                </h3>
+                
+            <Card className="textbox1">
+                <input
+                placeholder="Will be anonymous if not filled in"
+                value={profilename}
+                onChange={(e) => setProfileName(e.target.value)}
+                />
+            
+            </Card>
+           
+            </Card.Title>
+            <Card.Subtitle className="namealert">
+            <h3 style={{ color: 'white', fontSize: '18px' }}>
+                    <i>(name will be displayed with joke.)</i>
+                </h3>
+            </Card.Subtitle>
+            </Container>
+    
+            {/* <Card.Title>
             <div class="container">
             <div class="row">
             <div  style={{ flexDirection: 'row'}}>
@@ -109,7 +132,7 @@ return (
             onChange={(e) => setProfName(e.target.value)}
             /> 
             </div></div></div>
-            </Card.Title>
+            </Card.Title> */}
 
             <div class="container">
             <div class="row justify-content-lg-center">

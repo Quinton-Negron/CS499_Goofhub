@@ -4,7 +4,7 @@ import JokeSubmission from './firebase/JokeSubmission';
 
 
 
-export default () =>
+export default () => 
  
     <div class="container">
             <div class="row">
