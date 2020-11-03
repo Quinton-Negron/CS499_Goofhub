@@ -39,7 +39,7 @@ const Cards1 = props => (
   <Card className="categories">
   <Card.Img 
   className = "types" 
-  src="https://firebasestorage.googleapis.com/v0/b/goofhub-team.appspot.com/o/app%2Fvideo.jpg?alt=media&token=cd0c4126-b696-4490-825d-c0219ffb75af" 
+  src="https://firebasestorage.googleapis.com/v0/b/goofhub-team.appspot.com/o/app%2FMusic.jpg?alt=media&token=81e89973-ae90-4262-a176-2ff456857489" 
   alt="Card image" />  
   <a className = 'link' href="Music" class="btn btn-primary stretched-link">
     <Card.Body>
