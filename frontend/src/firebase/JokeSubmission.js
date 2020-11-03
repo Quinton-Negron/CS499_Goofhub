@@ -44,7 +44,7 @@ return (
 <Card className="JokeSubmission">
         <Card.Body className = "joke">
         <Card.Title>
-            <h3 style={{ color: 'white', fontSize: '35px' }}>
+            <h3 style={{ color: 'white', fontSize: '35px', fontFamily: 'BuiltTitlingRg-Regular' }}>
                 What kind of laugh is your joke?
             </h3>
             <Card className="dropsettings">
@@ -54,7 +54,7 @@ return (
             <option selected>SELECT A CATEGORY</option>
                 <option value="long">LONG</option>
                 <option value ="music">MUSIC</option>
-                <option value = "short">Quick</option>
+                <option value = "short">QUICK</option>
                 <option value = "holiday">HOLIDAY</option>
             </select>
             </Card> 
@@ -62,7 +62,7 @@ return (
 
             <Container className = "submitjokebox">
             <Card.Title>
-                <h3 style={{ color: 'white', fontSize: '35px' }}>
+                <h3 style={{ color: 'white', fontSize: '35px', fontFamily: 'BuiltTitlingRg-Regular' }}>
                     enter your joke
                 </h3>
 
@@ -77,13 +77,13 @@ return (
 
             <Container className = "submitjokebox">
             <Card.Title>
-                <h3 style={{ color: 'white', fontSize: '35px' }}>
+                <h3 style={{ color: 'white', fontSize: '35px', fontFamily: 'BuiltTitlingRg-Regular' }}>
                     Keywords
                 </h3>
 
             <Card className="textbox1">
                 <input
-                placeholder="one liner, knock knock"
+                placeholder="One Liner, Knock Knock"
                 value={keywords}
                 onChange={(e) => setKeywords(e.target.value)}
                 />
@@ -92,13 +92,13 @@ return (
 
             <Container className = "submitjokebox">
             <Card.Title>
-                <h3 style={{ color: 'white', fontSize: '35px' }}>
+                <h3 style={{ color: 'white', fontSize: '35px', fontFamily: 'BuiltTitlingRg-Regular' }}>
                     to whom shall we credit?
                 </h3>
                 
             <Card className="textbox1">
                 <input
-                placeholder="Will be anonymous if not filled in"
+                placeholder="Will be anonymous if not filled in."
                 value={profilename}
                 onChange={(e) => setProfileName(e.target.value)}
                 />
@@ -107,7 +107,7 @@ return (
            
             </Card.Title>
             <Card.Subtitle className="namealert">
-            <h3 style={{ color: 'white', fontSize: '18px' }}>
+            <h3 style={{ color: 'white', fontSize: '18px', fontFamily: 'BuiltTitlingRg-Regular' }}>
                     <i>(name will be displayed with joke.)</i>
                 </h3>
             </Card.Subtitle>
@@ -144,6 +144,7 @@ return (
                 background: loader ? "#ccc" : " rgb(240, 215, 31)",
                 fontSize: '30px',
                 borderRadius: '0.3rem',
+                fontFamily: 'BuiltTitlingRg-Regular',
                 }}
                 > 
             SUBMIT 
