@@ -1,162 +1,131 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './JokeSubmission.css';
-import { Card, Container } from 'react-bootstrap';
+import { Card, Col, Row, Form, Button } from 'react-bootstrap';
 import { db } from "./firebase";
   
-import { useState } from "react";
-
 const JokeSubmission = props => {
-            const [Category, setCategory] = useState("");
+            const [Category, setCategory] = useState("other");
             const [Joke, setJoke] = useState("");
             const [keywords, setKeywords] = useState("");
             const [profilename, setProfileName] = useState("");
             const [loader, setLoader] = useState(false);
+            //const [validated, setValidated] = useState(false);
+           
+            //if checkbox is used then username is Anonymous, otherwise username in profile is used
+            const name = profilename !== "Anonymous" ? "name" : "Anonymous";
+            //split keywords to an array
+            const words = keywords;
+            const keywordsArr = words.split(', ');
         
             const handleSubmit = (e) => {
-              e.preventDefault();
-              setLoader(true);
-          
-              db.collection("jokesubmission")
-                .add({
-                  Category: Category,
-                  Joke: Joke,
-                  keywords: keywords,
-                  profilename: profilename,
+                e.preventDefault();
+                setLoader(true);
+
+                /*const form = e.currentTarget;
+                if (form.checkValidity() === false) {
+                    e.preventDefault();
+                    e.stopPropagation();
+                }
+                setValidated(true);*/
+            
+                db.collection("jokesubmission").doc()
+                .set({
+                    category: [Category],
+                    content: Joke,
+                    keywords: keywordsArr,
+                    name: name,
+                    createdAt: new Date().toJSON().split("T")[0],
+                    type: "text"
                 })
                 .then(() => {
-                  setLoader(false);
-                  alert("Your joke has been submitted!");
+                    setLoader(false);
+                    alert("Your joke will be reviewed!");
                 })
                 .catch((error) => {
-                  alert(error.message);
-                  setLoader(false);
+                    alert(error.message);
+                    setLoader(false);
                 });
-          
-              setCategory("");
-              setJoke("");
-              setKeywords("");
-              setProfileName("");
-            };
-    
-return (
-<form className="form" onSubmit={handleSubmit}>
-<div>
-<Card className="JokeSubmission">
-        <Card.Body className = "joke">
-        <Card.Title>
-            <h3 style={{ color: 'white', fontSize: '35px', fontFamily: 'BuiltTitlingRg-Regular' }}>
-                What kind of laugh is your joke?
-            </h3>
-            <Card className="dropsettings">
-            <select placeholder="Category"
-            value={Category}
-            onChange={(e) => setCategory(e.target.value)}>
-            <option selected>SELECT A CATEGORY</option>
-                <option value="long">LONG</option>
-                <option value ="music">MUSIC</option>
-                <option value = "short">QUICK</option>
-                <option value = "holiday">HOLIDAY</option>
-            </select>
-            </Card> 
-            </Card.Title>
-
-            <Container className = "submitjokebox">
-            <Card.Title>
-                <h3 style={{ color: 'white', fontSize: '35px', fontFamily: 'BuiltTitlingRg-Regular' }}>
-                    enter your joke
-                </h3>
-
-            <Card className="textbox1">
-                <textarea
-                placeholder="Make us laugh!"
-                value={Joke}
-                onChange={(e) => setJoke(e.target.value)}
-                ></textarea>
-            </Card>
-            </Card.Title></Container>
-
-            <Container className = "submitjokebox">
-            <Card.Title>
-                <h3 style={{ color: 'white', fontSize: '35px', fontFamily: 'BuiltTitlingRg-Regular' }}>
-                    Keywords
-                </h3>
-
-            <Card className="textbox1">
-                <input
-                placeholder="One Liner, Knock Knock"
-                value={keywords}
-                onChange={(e) => setKeywords(e.target.value)}
-                />
-            </Card>
-            </Card.Title></Container>
-
-            <Container className = "submitjokebox">
-            <Card.Title>
-                <h3 style={{ color: 'white', fontSize: '35px', fontFamily: 'BuiltTitlingRg-Regular' }}>
-                    to whom shall we credit?
-                </h3>
-                
-            <Card className="textbox1">
-                <input
-                placeholder="Will be anonymous if not filled in."
-                value={profilename}
-                onChange={(e) => setProfileName(e.target.value)}
-                />
             
-            </Card>
-           
-            </Card.Title>
-            <Card.Subtitle className="namealert">
-            <h3 style={{ color: 'white', fontSize: '18px', fontFamily: 'BuiltTitlingRg-Regular' }}>
-                    <i>(name will be displayed with joke.)</i>
-                </h3>
-            </Card.Subtitle>
-            </Container>
+                setCategory("");
+                setJoke("");
+                setKeywords("");
+                setProfileName("");
+
+              
+            };
+         
+            
     
-            {/* <Card.Title>
-            <div class="container">
-            <div class="row">
-            <div  style={{ flexDirection: 'row'}}>
-                
-            <h3 style={{ color: 'white', fontSize: '35px' }}>
-            want to be anonymous?&nbsp;</h3> 
-            <label class="form-check-label">
-                <h3 style={{ color: 'white', fontSize: '20px' }}>
-                YES&nbsp; </h3> 
-            </label>
-
-            <input
-            type = "checkbox"
-            placeholder="profname"
-            value={profname}
-            onChange={(e) => setProfName(e.target.value)}
-            /> 
-            </div></div></div>
-            </Card.Title> */}
-
-            <div class="container">
-            <div class="row justify-content-lg-center">
-            <div class="col-20">
-            <button 
-            type ="submit"
-                style={{
-                width: "380px",
-                background: loader ? "#ccc" : " rgb(240, 215, 31)",
-                fontSize: '30px',
-                borderRadius: '0.3rem',
-                fontFamily: 'BuiltTitlingRg-Regular',
-                }}
-                > 
-            SUBMIT 
-            </button>
-            </div>
-            </div>
-            </div>
-
-    </Card.Body>
-</Card>
-</div>
-</form>
-)
+    return (
+        <>
+        <Row lg={3}>
+        <Col lg={2}></Col>
+        <Col lg={8}>
+        <Card className="submitContainer">
+            <Card.Body className="submitTitle">SUBMIT YOUR JOKE</Card.Body>
+        <Form  onSubmit={handleSubmit}>
+        <Form.Group controlId="exampleForm.ControlSelect2">
+          <Form.Label className="submitLabel mt-3">What kind of Laugh is your Joke?</Form.Label>
+          <Form.Control 
+            className="submitPlaceholder"
+            required
+            as="select" 
+            value={Category}
+            onChange={(e) => setCategory(e.target.value)}
+            >
+            <option value="other">SELECT A CATEGORY</option>
+            <option value="long">LONG</option>
+            <option value ="music">MUSIC</option>
+            <option value = "short">QUICK</option>
+            <option value = "holiday">HOLIDAY</option>
+            <option value = "18+">18+</option>
+            
+          </Form.Control>
+          </Form.Group>
+        <Form.Group controlId="exampleForm.ControlTextarea1">
+          <Form.Label className="submitLabel">Enter Your Joke</Form.Label>
+          <Form.Control className="submitPlaceholder"
+            as="textarea" 
+            rows={3} 
+            required
+            placeholder="Make us laugh!"
+            value={Joke}
+            onChange={(e) => setJoke(e.target.value)}
+            />
+        </Form.Group>
+        <Form.Group controlId="exampleForm.ControlInput1">
+          <Form.Label className="submitLabel">Keywords</Form.Label>
+          <Form.Control className="submitPlaceholder"
+            required
+            placeholder="One Liner, Knock Knock"
+            value={keywords}
+            onChange={(e) => setKeywords(e.target.value)} 
+            />
+        </Form.Group>
+        
+        <Form.Check inline className="submitAnon"
+          label="SUBMIT AS ANONYMOUS"
+          type="checkbox"
+          checked={profilename}
+          value="Anonymous"
+          onChange={(e) => setProfileName(e.currentTarget.value)}
+        />
+      
+        <Button
+            className="submitButton"
+            size="sm"
+            variant="warning"
+            type="submit"
+            block
+            > SUBMIT
+        </Button>
+        </Form>
+        </Card>
+      </Col>
+      <Col lg={2}></Col>
+      </Row>
+    </>
+   
+    )
 }
 export default JokeSubmission;

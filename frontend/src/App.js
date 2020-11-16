@@ -5,6 +5,7 @@ import Home from './Home';
 import SubmitJoke from './Submitjoke';
 import LogIn from './Login';
 import SignUp from './Signup';
+import ForgotPassword from './Forgotpassword';
 import Search from './Search';
 import addData from './firebase/secretPage';
 import Short from './jokes/Short';
@@ -28,6 +29,7 @@ function App() {
             <Route path="/profile" component={Profile} />
             <Route path="/login" component={LogIn} />
             <Route path="/signup" component={SignUp} />
+            <Route path="/forgotpassword" component={ForgotPassword} />
             <Route path="/search" component={Search} />
             <Route path="/short" component={Short} />
             <Route path="/long" component={Long} />

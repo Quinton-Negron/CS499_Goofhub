@@ -10,6 +10,8 @@ export function useFetch(table) {
     
     useEffect(() => {
         db.collection(table)
+            .where('createdAt','<=','2020-11-11')
+            .orderBy('createdAt','asc')
             .onSnapshot((snapshot) => {
                 const newJokes = snapshot.docs.map((doc) => ({
                     id: doc.id,...doc.data()

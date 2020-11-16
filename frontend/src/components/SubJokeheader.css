@@ -1,21 +1,14 @@
-
-.subjoke{
-    background-color: rgb(255, 235, 51) !important;
-    font-family: 'CartoonistKooky';
+.subJokeHead {
     margin-top: 10px;
-   
-}
-
-.subjoke-body {
-    padding: 2rem 0 !important;
-    margin-left: 1rem;
-    border-radius: 2rem;
-}
-
-.submitheader {
+    margin-bottom: 0px;
+    padding-top: 25px;
+    padding-bottom: 25px;
+    background-color:rgb(255, 235, 51);
+    background-size: cover;
+    border: 3px black solid;
     border-radius: 1rem;
-}
-
-.submitheader {
-    border-style: solid;
+    vertical-align: middle;
+    text-align: center;
+    font-family: 'CartoonistKooky';
+    
 }

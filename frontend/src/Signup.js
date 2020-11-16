@@ -5,56 +5,63 @@ function SignUp() {
     return (
         <Container>
         <Card className="login">
-            <Card.Body>
+            <Card.Body className="ml-5 mr-5">
             <Form>
-            <h3 className= "email1" style={{ color: 'white', fontSize: '70px' }}>SIGN UP</h3>
+            <Card.Title className= "email1">SIGN UP</Card.Title>
             <div className="divider1"></div>
 
             <Form.Group>
-                <h3 style={{ color: 'white', fontSize: '35px' }}>Name</h3>
-                <Form.Row>
+                <Form.Label className="fontlabel">Name</Form.Label>
+                <Form.Row >
                     <Col>
-                    <Form.Control placeholder="First name" />
+                    <Form.Control required placeholder="First name" />
                     </Col>
                     <Col>
-                    <Form.Control placeholder="Last name" />
+                    <Form.Control required placeholder="Last name" />
                     </Col>
                 </Form.Row>
             </Form.Group>
 
             <Form.Group>
-            <h3 style={{ color: 'white', fontSize: '35px' }}>Date of Birth</h3>
-            <Form.Control placeholder="MM/DD/YYYY" />
+            <Form.Label className="fontlabel">Date of Birth</Form.Label>
+            <Form.Control required  placeholder="MM/DD/YYYY" />
             </Form.Group>
 
             <Form.Group>
-            <h3 style={{ color: 'white', fontSize: '35px' }}>UserName</h3>
-            <Form.Control placeholder="USERNAME" />
+            <Form.Label className="fontlabel">UserName</Form.Label>
+            <Form.Control  required  placeholder="Username" />
             </Form.Group>
-
 
             <Form.Group className="emailaddress" controlId="formBasicEmail">
-            <Form.Label style={{ color: 'white', fontSize: '35px' }}>email address</Form.Label>
-            <Form.Control type="email" placeholder="ENTER EMAIL" />
-            <Form.Text className="text-light">
-            your email is safe with us
-            </Form.Text>
+            <Form.Label className="fontlabel">email address</Form.Label>
+            <Form.Control required type="email" placeholder="name@example.com" />
+            <Form.Text className="text-light">YOUR EMAIL IS SAFE WITH US</Form.Text>
             </Form.Group>
             
-            <h3 style={{ color: 'white', fontSize: '35px' }}>password</h3>
             <Form.Group controlId="formBasicPassword">
-            <Form.Control type="password" placeholder="Enter Password" />
-            <Form.Control className="mt-2" type="password" placeholder="Confirm Password" />
+            <Form.Label className="fontlabel">password</Form.Label>
+            <Form.Control required type="password" placeholder="Enter password" />
             </Form.Group>
+            
         
             <Button
-                className="enter align-content-center relative"
+                className="enter1 align-content-center relative"
                 size="lg"
                 variant="warning"
                 block
-                > SUBMIT
+                > SIGN UP
             </Button>
             </Form>
+
+            <div className="divider2"></div>
+            <Button
+                className="enter align-content-center relative  mb-5"
+                size="lg"
+                variant="warning"
+                href="Login"
+                block
+                > LOG IN HERE
+            </Button>      
                             
             </Card.Body>
         </Card>

@@ -25,10 +25,10 @@ function Navibar() {
         <Nav className="mr-auto"></Nav>
           <Nav className="nav-font">
             <Nav.Link href="Submitjoke">SUBMIT A JOKE</Nav.Link> 
-           {/* <NavDropdown title="LOG IN" id="collasible-nav-dropdown">
+            <NavDropdown title="LOG IN" id="collasible-nav-dropdown">
               <NavDropdown.Item href="Login">LOG IN</NavDropdown.Item>
               <NavDropdown.Item href="Signup">SIGN UP</NavDropdown.Item>
-              </NavDropdown> */}
+              </NavDropdown> 
          
           
           <Form inline>
