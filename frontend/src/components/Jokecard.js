@@ -1,6 +1,7 @@
 import React from 'react';
-import { Card, ResponsiveEmbed } from 'react-bootstrap';
+import { Card, ResponsiveEmbed, Button } from 'react-bootstrap';
 import './Jokecard.css';
+import LikeButton from './like';
 
 
 //Cards for text jokes
@@ -18,6 +19,8 @@ export function Textjokes({data}) {
             </blockquote>
             <Card.Text>
             {/*}    <small className="text-muted">Share, Rate, Report</small>*/}
+            
+            <LikeButton/>
             </Card.Text>
         </Card.Body>
         
@@ -38,6 +41,7 @@ export function Imagejokes({data}) {
             </blockquote>
             <Card.Text>
             {/*    <small className="text-muted">Share, Rate, Report</small>*/}
+            <LikeButton/>
             </Card.Text>
         </Card.Body>
             
@@ -65,6 +69,7 @@ export function Videojokes({data}) {
         </blockquote>
         <Card.Text>
          {/*   <small className="text-muted">Share, Rate, Report</small>*/}
+         <LikeButton/>
         </Card.Text>
     </Card.Body>
     
