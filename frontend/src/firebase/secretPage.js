@@ -1,7 +1,7 @@
 import React from 'react';
-import firebase from "./firebase";
+//import firebase from "./firebase";
 
-const db = firebase.firestore();
+//const db = firebase.firestore();
 function addData() {
     return(
         <p>hello</p>
@@ -10,7 +10,7 @@ function addData() {
 //collection = table
 //doc = id (primary key) string
 //add one document only
-db.collection("jokes").doc('3').set(
+/*db.collection("jokes").doc('3').set(*/
 /*{
     content: "What’s the best thing about Switzerland? I don’t know, but the flag is a big plus.",
     name: "Goofer",
@@ -27,14 +27,14 @@ db.collection("jokes").doc('3').set(
     keywords: ["bread","worst","attitude","sour dough"],
     user: "user/VrGvRdJVpnneO3ErRaHD"
 }*/
-{
+/*{
     content: "I used to be a math teacher, but it came with a lot of problems.",
     name: "Goofer",
     type: "text",
     category: ["short"],
     keywords: ["math","problems","teacher"],
     user: "user/VrGvRdJVpnneO3ErRaHD"
-},
+},*/
 /*{
     content: "Yesterday I saw a guy spill all his Scrabble letters on the road. I asked him, 'What's the word on the street?'",
     name: "Goofer",
@@ -75,13 +75,13 @@ db.collection("jokes").doc('3').set(
     keywords: ["","","",""],
     user: "user/VrGvRdJVpnneO3ErRaHD"
 }*/
-)
+/*)
 .then(function(docRef) {
     console.log("Document written with ID: ", docRef.id);
 })
 .catch(function(error) {
     console.error("Error adding document: ", error);
-});
+});*/
 
 //add multiple jokes, auto generate id
 /*addUsersToFirestore() {
