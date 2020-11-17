@@ -2,9 +2,9 @@ import React, { useState, useEffect } from 'react';
 import './components/Searchbar.css';
 import { Container, Row, Col } from 'react-bootstrap';
 import { Imagejokes,Textjokes,Videojokes } from './components/Jokecard';
-import { db }from "./firebase/firebase";
+import firebase from "./firebase/firebase";
 
-
+const db = firebase.firestore();
 function Search() {
   const [searchTerm, setSearchTerm] = useState("");
 

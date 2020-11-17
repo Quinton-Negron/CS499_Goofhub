@@ -12,7 +12,11 @@ const firebaseConfig = {
   appId: process.env.REACT_APP_MESSAGING_APP_ID,
 };
 
-var firebaseApp = firebase.initializeApp(firebaseConfig);
+firebase.initializeApp(firebaseConfig);
 
-var db = firebaseApp.firestore()
-export {db};
+export default firebase;
+
+//var firebaseApp = firebase.initializeApp(firebaseConfig);
+
+//var db = firebaseApp.firestore()
+//export {db};

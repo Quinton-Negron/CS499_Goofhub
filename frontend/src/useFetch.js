@@ -1,9 +1,10 @@
 import { useState, useEffect } from "react";
-import { db } from "./firebase/firebase";
+import firebase from "./firebase/firebase";
 
 //const [jokes, setJokes] = useState([]);
 //const [loading, setLoading] = useState(false);
 
+const db = firebase.firestore();
 //gets data from one table (realtime)
 export function useFetch(table) {
     const [jokes, setJokes] = useState([]);

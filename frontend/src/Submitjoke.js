@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 import './Submitjoke.css';
 import { Card, Col, Row, Form, Button } from 'react-bootstrap';
-import { db } from "./firebase/firebase";
+import firebase from "./firebase/firebase";
 
-
+const db = firebase.firestore();
 export default function SubmitJoke() { 
     const [Category, setCategory] = useState("other");
     const [Joke, setJoke] = useState("");

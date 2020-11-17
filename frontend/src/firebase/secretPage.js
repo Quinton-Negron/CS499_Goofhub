@@ -1,6 +1,7 @@
 import React from 'react';
-import { db } from "./firebase";
+import firebase from "./firebase";
 
+const db = firebase.firestore();
 function addData() {
     return(
         <p>hello</p>
