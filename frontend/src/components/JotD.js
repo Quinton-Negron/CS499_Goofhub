@@ -3,7 +3,11 @@ import './JotD.css';
 import { Card, Container } from 'react-bootstrap';
 
 
-const JotD = props => ( 
+const JotD = props => { 
+{/* Delete this. write your algo for getting data here before the return */}
+
+
+    return (
     <Card className="jotd">
         <Container className ="borderjoke">
             <Card.Body>
@@ -24,4 +28,5 @@ const JotD = props => (
             </Card.Body></Container>
             </Card>
     )
+}
 export default JotD;
