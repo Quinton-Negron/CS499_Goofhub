@@ -1,0 +1,95 @@
+.proCard {
+    background-color:rgb(255, 235, 51);
+    box-shadow: 2px 5px 10px 5px #b7b210;
+    vertical-align: middle;
+    text-align: center;
+    border-radius: 3rem;
+    /*padding-left: 25px;*/
+    margin-right: -20px;
+    margin-left: -20px;
+    margin-top: 40px;
+}
+
+.proCardBody {
+    background-color: #cdc51a !important;
+    border-radius: 5rem;
+    /*width: 450px;*/
+    margin: 30px;
+    padding-left: 20px;
+    padding-right: 20px;
+    box-shadow: 2px 5px 10px 5px #b7b210;
+}
+.proSideCard {
+    background-color: #cdc51a !important;
+    
+    box-shadow: 2px 3px 7px 3px #b7b210;
+    border: none;
+    margin-left: 20px;
+    margin-right: 20px;
+}
+.proSideName {
+    font-family: 'BuiltTitlingRg-Regular';
+    font-size: 35px;
+    text-align: center;
+    margin-top: 2px;
+}
+.proSideUser {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 25px;
+    text-align: center;
+    margin-top: -20px;
+}
+.proSideEmail {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 15px;
+    text-align: center;
+    margin-top: -20px;
+}
+.proTitle {
+    vertical-align: middle;
+    text-align: center;
+    font-family: 'CartoonistKooky';
+    font-size: 40px;
+    font-style: italic;
+    padding: -20px;
+}
+
+.proForm {
+   
+    background-color:#b7b210 !important;
+    padding-left: 15px;
+    padding-right: 15px;
+}
+.progroup {
+    border-bottom: solid grey 2px !important;
+    padding-top: 1px;
+    
+}
+.proWhite {
+    font-family: 'BuiltTitlingRg-Regular';
+    color: white;
+    font-size: 30px;
+    text-align: left;
+      
+}
+
+.proText {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 20px;
+    margin-top: 10px;
+    text-align: left;
+   
+}
+.proLineTop {
+    border-top: solid black 3px !important;
+}
+.proLineBot {
+    border-bottom: solid black 3px !important;
+    margin-bottom: 150px;
+}
+
+.procontrol {
+    background: none;
+    border: none;
+   
+}

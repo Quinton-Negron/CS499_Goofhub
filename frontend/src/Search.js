@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import './components/Searchbar.css';
-import { Container, Row, Col } from 'react-bootstrap';
+import { Container, Row, Col, Jumbotron } from 'react-bootstrap';
 import { Imagejokes,Textjokes,Videojokes } from './components/Jokecard';
 import firebase from "./firebase/firebase";
 
@@ -75,6 +75,9 @@ function Search() {
         {items}
     </Row>
     </Container>
+    <Jumbotron className="bg-transparent "/>
+    <Jumbotron className="bg-transparent "/>
+    <Jumbotron className="bg-transparent "/>
     </React.Fragment>
   );
 }
