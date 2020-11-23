@@ -16,7 +16,7 @@ const Profile = () => {
       <Row >
         <Col md={3} className="mt-5 align-items-center ">
           <img
-            src="https://firebasestorage.googleapis.com/v0/b/goofhub-team.appspot.com/o/app%2FMusic.jpg?alt=media&token=81e89973-ae90-4262-a176-2ff456857489"
+            src="https://firebasestorage.googleapis.com/v0/b/goofhub-team.appspot.com/o/profilepic.png?alt=media&token=d554c921-c31f-4592-8abf-78aca34a7e9d"
             alt="Profile"
             width="200px"
             height="auto"

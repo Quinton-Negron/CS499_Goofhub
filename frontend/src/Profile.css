@@ -21,29 +21,32 @@
 }
 .proSideCard {
     background-color: #cdc51a !important;
-    
     box-shadow: 2px 3px 7px 3px #b7b210;
     border: none;
     margin-left: 20px;
-    margin-right: 20px;
+    /* margin-right: 20px; */
+    
 }
 .proSideName {
     font-family: 'BuiltTitlingRg-Regular';
     font-size: 35px;
     text-align: center;
     margin-top: 2px;
+    
 }
 .proSideUser {
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-family: 'Blockletter';
     font-size: 25px;
     text-align: center;
     margin-top: -20px;
+    
 }
 .proSideEmail {
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     font-size: 15px;
     text-align: center;
     margin-top: -20px;
+    font-style: italic;
 }
 .proTitle {
     vertical-align: middle;
@@ -70,14 +73,16 @@
     color: white;
     font-size: 30px;
     text-align: left;
+    margin-top: 1rem;
       
 }
 
 .proText {
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     font-size: 20px;
-    margin-top: 10px;
+    margin-top: 21px;
     text-align: left;
+    font-style: italic;
    
 }
 .proLineTop {
@@ -91,5 +96,16 @@
 .procontrol {
     background: none;
     border: none;
+    margin-left: 1.5rem;
    
+}
+
+.img-fluid {
+    max-width: 100%;
+    height: auto;
+    margin-left: 20px;
+}
+
+.fas {
+    margin-top: 1.5rem;
 }
