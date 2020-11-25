@@ -1,35 +1,72 @@
-import React from 'react';
-//import { useAuth0 } from "@auth0/auth0-react";
-import { Row, Col, Form, Card } from "react-bootstrap";
+import React, { useContext, useState } from "react";
+import { AuthContext } from "./auth/Auth";
+import { Row, Col, Form,Card } from "react-bootstrap";
+import firebase from "./firebase/firebase";
+import {useGetUser} from "./firebase/useFetch";
 import './Profile.css';
 
 const Profile = () => {
-  //const { user, isAuthenticated } = useAuth0();
+  //get user's uid from authentication
+  const { currentUser } = useContext(AuthContext);
+  const currentUserId = currentUser ? currentUser.uid : null;
+  //get user from data cross checking authenticated userID
+  const users = useGetUser('users',currentUserId);
+
+  const [name, setName] = useState("");
+
+  //updates username and displayName
+  function editName(users) {
+    const regex = /^\s*$/;//regular expression for blank spaces
+    //if input has blank spaces use original displayName, othewise use new input
+    const newName = (regex.test(name) === true) ? currentUser.displayName : name;
+    
+    const updateUsername = {
+      username: newName,
+    };
+    firebase.firestore().collection("users")
+    .doc(users.id)
+    .update(updateUsername)//update in firestore
+    .then(() => {//update in authentication
+      const user = firebase.auth().currentUser;
+      user.updateProfile({
+          displayName: newName
+          });
+    })
+    .then(() => {
+        alert("Username has changed. Refresh your page for latest update.");
+    })
+    .catch((error) => {
+        alert(error.message);
+    });
+
+    setName("");
+      
+};
 
   return (
-    //isAuthenticated && ( 
+    currentUser && (  
       
       <Row lg={3}>
       <Col lg={2}></Col>
       <Col lg={8}>
       <Card className="proCard">
-      <Row >
+      {users.map((items) => (
+      <Row key={items.id}>
         <Col md={3} className="mt-5 align-items-center ">
           <img
-            src="https://firebasestorage.googleapis.com/v0/b/goofhub-team.appspot.com/o/profilepic.png?alt=media&token=d554c921-c31f-4592-8abf-78aca34a7e9d"
-            alt="Profile"
-            width="200px"
-            height="auto"
-            className="rounded-circle img-fluid "
+            src={currentUser.photoURL}
+            alt="Profile"         
+            className="rounded-circle proimg-fluid "
           />
-        
+          <div className="btn-xlg proAddBtn">
+          <i className="fas fa-plus-circle"></i></div>
         
           <Row>
             <Col  className="mt-5 align-items-center profile-header">
               <Card className="proSideCard">
-                <Card.Title className="proSideName">Goof Admin</Card.Title>
-                <Card.Text className="proSideUser">Goofer</Card.Text>
-                <Card.Text className="proSideEmail">goofhubteam@gmail.com</Card.Text>
+                <Card.Title className="proSideName">{items.first} {items.last}</Card.Title>
+                <Card.Text className="proSideUser">{items.username}</Card.Text>
+                <Card.Text className="proSideEmail">{currentUser.email}</Card.Text>
               </Card>
             </Col>
           </Row>
@@ -43,7 +80,7 @@ const Profile = () => {
             <Form.Label  className="proWhite">NAME</Form.Label>
           </Form.Group>
           <Form.Group as={Col} >
-            <Form.Label  className="proText" >Goof Admin</Form.Label>
+            <Form.Label  className="proText" >{items.first} {items.last}</Form.Label>
           </Form.Group>
           <Form.Group as={Col}></Form.Group>
           </Form.Row>
@@ -53,7 +90,7 @@ const Profile = () => {
             <Form.Label className="proWhite">DATE OF BIRTH</Form.Label>
           </Form.Group>
           <Form.Group as={Col}>
-              <Form.Label  className="proText">01/01/3000</Form.Label>
+              <Form.Label  className="proText">{items.dob}</Form.Label>
           </Form.Group>
           <Form.Group as={Col} ></Form.Group>
           </Form.Row>
@@ -63,13 +100,18 @@ const Profile = () => {
             <Form.Label className="proWhite" >USERNAME</Form.Label>
           </Form.Group>
           <Form.Group as={Col} >
-            <Form.Control required className="procontrol proText" size="sm" type="username" placeholder="Goofer"/>
-          </Form.Group>
-          <Form.Group as={Col} className="btn-xlg ">
-              <div >
-              <i className="fas fa-pen"></i></div>
-           
-          </Form.Group>
+          <Form.Control required 
+                className="procontrol proText" 
+                value={name}
+                onChange={(e) => setName(e.target.value)}
+                size="sm" 
+                type="username" 
+                placeholder={items.username}/>
+            </Form.Group>
+            <Form.Group as={Col} >
+                <div type="submit" onClick={() => editName(items)} className="btn-xlg profas">
+                <i className="fas fa-pen"></i></div>
+            </Form.Group>
           </Form.Row>
 
           <Form.Row className="progroup">
@@ -77,10 +119,10 @@ const Profile = () => {
             <Form.Label className="proWhite">EMAIL</Form.Label>
           </Form.Group>  
           <Form.Group as={Col}>
-              <Form.Control required className="procontrol proText" size="sm" type="email" placeholder="goofhubteam@gmail.com"/>
+              <Form.Control required className="procontrol proText" size="sm" type="email" placeholder={currentUser.email}/>
           </Form.Group>
           <Form.Group as={Col}>
-              <div className="btn-xlg">
+              <div className="btn-xlg profas">
               <i className="fas fa-pen"></i></div>
           </Form.Group>
           </Form.Row>
@@ -94,8 +136,8 @@ const Profile = () => {
               <Form.Control required className="procontrol proText" size="sm" type="password" placeholder="......" />
           </Form.Group>  
           <Form.Group as={Col}>
-              <div className="btn-xlg">
-              <i className="fas fa-pen"></i></div>  
+              <div className="btn-xlg profas">
+              <i className=" fas fa-pen"></i></div>  
           </Form.Group>
           </Form.Row>
         </Form>
@@ -103,7 +145,7 @@ const Profile = () => {
           
         </Col>
       </Row>
-     
+      ))}
       {/*<Row>
         {JSON.stringify(currentUser, null, 2)}
       </Row>*/}
@@ -112,7 +154,7 @@ const Profile = () => {
     <Col lg={2}></Col>
     </Row>
     )
-  
+  )
 }
 
 export default Profile;

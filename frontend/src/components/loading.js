@@ -1,9 +1,8 @@
 import React from "react";
-import loading from "../assets/loading.svg";
 
 const Loading = () => (
   <div className="spinner align-content-center ">
-    <img src={loading} alt="Loading" />
+    <img src="https://firebasestorage.googleapis.com/v0/b/goofhub-team.appspot.com/o/app%2Floading.svg?alt=media&token=f8371205-aee3-4155-9350-985b096c6c4a" alt="Loading" />
   </div>
 );
 

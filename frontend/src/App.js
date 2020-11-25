@@ -16,6 +16,7 @@ import Plus18 from './jokes/Plus18';
 import Navibar from './components/Navibar';
 import Profile from './Profile';
 import Footer from './components/footer';
+import PrivateRoute from './auth/private-route';
 
 function App() {
   return (
@@ -25,8 +26,8 @@ function App() {
         
           <Switch>
             <Route exact path="/" component={Home} />
-            <Route path="/submitjoke" component={SubmitJoke} />
-            <Route path="/profile" component={Profile} />
+            <PrivateRoute path="/submitjoke" component={SubmitJoke} />
+            <PrivateRoute path="/profile" component={Profile} />
             <Route path="/login" component={LogIn} />
             <Route path="/signup" component={SignUp} />
             <Route path="/forgotpassword" component={ForgotPassword} />
@@ -35,11 +36,11 @@ function App() {
             <Route path="/long" component={Long} />
             <Route path="/music" component={Music} />
             <Route path="/holiday" component={Holiday} />
-            <Route path="/plus18" component={Plus18} />
+            <PrivateRoute path="/plus18" component={Plus18} />
             <Route path="/secretPage" component={addData} />
           </Switch>
           
-          <br></br>
+          
      <Footer />
      
     </Router>

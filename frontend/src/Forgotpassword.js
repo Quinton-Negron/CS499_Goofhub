@@ -1,19 +1,47 @@
-import React from 'react';
+import React, { useState, useContext } from 'react';
+import { Redirect } from "react-router";
 import './Login.css'
 import { Card, Container, Button, Form } from 'react-bootstrap';
+import { AuthContext } from "./auth/Auth";
+import firebase from "./firebase/firebase";
 
-function ForgotPassword() {
+function ForgotPassword({ history }) {
+    
+    const [email, setEmail] = useState("");
+    const onChangeHandler = event => {
+        const { name, value } = event.currentTarget;
+        if (name === "email") {
+        setEmail(value);
+        }
+    };
+    const sendResetEmail = event => {
+        event.preventDefault();
+       
+        firebase.auth()
+            .sendPasswordResetEmail(email)
+            .then(() => {
+                history.push("/Login");
+            })
+            .catch((error) => {
+                alert(error);
+            });
+    };
+    const { currentUser } = useContext(AuthContext);
+    
+    if (currentUser) {
+    return <Redirect to="/" />
+    }
     return (
    
         <Container>
         <Card className="login">
             <Card.Body>
-            <Form>
+            <Form  onSubmit={sendResetEmail}>
             <Card.Title className= "email1">PASSWORD RESET</Card.Title>
             <div className="divider1"></div>
             <Form.Group className="emailaddress" controlId="formBasicEmail">
             <Form.Label className="fontlabel">EMAIL ADDRESS</Form.Label>
-            <Form.Control required type="email" placeholder="Enter email" />
+            <Form.Control required onChange={onChangeHandler} name="email" type="email" placeholder="Enter email" />
             </Form.Group>
                         
            
@@ -21,6 +49,7 @@ function ForgotPassword() {
                 className="enter align-content-center relative"
                 size="lg"
                 variant="warning"
+                type="submit"
                 block
                 >SEND ME A RESET LINK
             </Button>

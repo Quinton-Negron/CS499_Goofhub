@@ -1,16 +1,13 @@
 import { useState, useEffect } from "react";
-import firebase from "./firebase/firebase";
+import firebase from "./firebase";
 
-//const [jokes, setJokes] = useState([]);
-//const [loading, setLoading] = useState(false);
 
-const db = firebase.firestore();
 //gets data from one table (realtime)
 export function useFetch(table) {
     const [jokes, setJokes] = useState([]);
-    
     useEffect(() => {
-        db.collection(table)
+        firebase.firestore()
+            .collection(table)
             .where('createdAt','<=','2020-11-11')
             .orderBy('createdAt','asc')
             .onSnapshot((snapshot) => {
@@ -25,6 +22,22 @@ export function useFetch(table) {
     return jokes
 }
 
+export function useGetUser(table, currentUserId) {
+  const [users, setUsers] = useState([]); 
+  useEffect(() => {
+          firebase.firestore()
+              .collection(table)
+              .where('uid','==', currentUserId)
+              .onSnapshot((snapshot) => {
+                  const newUsers = snapshot.docs.map((doc) => ({
+                      id: doc.id,...doc.data()
+                  }))
+                  setUsers(newUsers);
+              })    
+      // eslint-disable-next-line
+  }, [table])
+  return users
+}
 // ADD FUNCTION
 /*export function addJoke(table,newJoke) {
   const [jokes, setJokes] = useState([]);

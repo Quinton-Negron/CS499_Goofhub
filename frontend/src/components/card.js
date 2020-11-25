@@ -1,11 +1,24 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import './card.css';
 import { Card, CardDeck, Button } from 'react-bootstrap';
 import { Container } from 'react-bootstrap';
 import { Row, Col } from 'react-bootstrap';
+import { AuthContext } from "../auth/Auth";
+import  {useGetUser} from '../firebase/useFetch';
 
+function Cards1() {
+  
+  //get user's uid from authentication
+  const { currentUser } = useContext(AuthContext);
+  const currentUserId = currentUser ? currentUser.uid : null;
+  //get user from data cross checking authenticated userID
+  const users = useGetUser('users',currentUserId);
 
-const Cards1 = props => (
+  //checks user's age
+  const Uage = users.map(items => items.dob);
+  const getAge = birthDate => Math.floor((new Date() - new Date(birthDate).getTime()) / 3.15576e+10)
+  
+  return (
 <Container> 
      
         <Row className='text-center'>
@@ -111,17 +124,19 @@ const Cards1 = props => (
 </CardDeck>
 </Col></Row>
 
-
-{/*
-  <Row className='text-center'>
-      <Col>
+<br></br>
+  <Row  className='text-center'>
+  <Col>
+  {currentUser && !(getAge(Uage) >= 18 && getAge(Uage) <= 110)? null:
+  
+      
       <CardDeck>
 <Card className="categories">
   <Card.Img 
   className = "types" 
   src="https://firebasestorage.googleapis.com/v0/b/goofhub-team.appspot.com/o/app%2Fadult.jpg?alt=media&token=751fe2a6-d9be-4ff3-ba02-a1ce12d3b0e0" 
   alt="Card image" />  
-  <a className = 'link' href="#" class="btn btn-primary stretched-link">
+  <a className = 'link' href="plus18" class="btn btn-primary stretched-link">
     <Card.Body>
     <Button
           size="xlg"
@@ -140,12 +155,21 @@ const Cards1 = props => (
     </Card.Body></a>
   </Card>
 </CardDeck>
+}
+</Col>
 
-</Col></Row>
-*/}
+<Col></Col>
+<Col></Col>
+<Col></Col>
+<Col></Col>
+<Col></Col>
+</Row>
+
+
+
 
 </Container>
-
-)
+);
+}
 
 export default Cards1;

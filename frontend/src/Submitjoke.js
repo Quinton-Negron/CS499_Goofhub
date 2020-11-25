@@ -1,50 +1,53 @@
-import React, { useState } from 'react';
+import React, {  useContext, useState } from 'react';
 import './Submitjoke.css';
+import { AuthContext } from "./auth/Auth";
 import { Card, Col, Row, Form, Button } from 'react-bootstrap';
 import firebase from "./firebase/firebase";
+import  {useGetUser} from './firebase/useFetch';
 
-const db = firebase.firestore();
 export default function SubmitJoke() { 
     const [Category, setCategory] = useState("other");
     const [Joke, setJoke] = useState("");
     const [keywords, setKeywords] = useState("");
     const [profilename, setProfileName] = useState("");
-    //const [loader, setLoader] = useState(false);
-    //const [validated, setValidated] = useState(false);
    
-    //if checkbox is used then username is Anonymous, otherwise username in profile is used
-    const name = profilename !== "Anonymous" ? "name" : "Anonymous";
     //split keywords to an array
     const words = keywords;
     const keywordsArr = words.split(', ');
 
+    //get user's uid from authentication
+    const { currentUser } = useContext(AuthContext);
+    const currentUserId = currentUser ? currentUser.uid : null;
+    //get user from data cross checking authenticated userID
+    const users = useGetUser('users',currentUserId);
+     
+    //Pulling out only the field for username
+    const Uname = users.map(items => items.username);
+    //console.log(Uname);
+
+    //if checkbox is used then username is Anonymous, otherwise username in profile is used
+    const name = profilename !== "Anonymous" ? Uname[0] : "Anonymous";
+    //console.log(Uname[0]);
+
     const handleSubmit = (e) => {
         e.preventDefault();
-        //setLoader(true);
-
-        /*const form = e.currentTarget;
-        if (form.checkValidity() === false) {
-            e.preventDefault();
-            e.stopPropagation();
-        }
-        setValidated(true);*/
-    
-        db.collection("jokesubmission").doc()
+            
+        firebase.firestore()
+        .collection("jokesubmission").doc()
         .set({
             category: [Category],
             content: Joke,
             keywords: keywordsArr,
             name: name,
             createdAt: new Date().toJSON().split("T")[0],
-            type: "text"
+            type: "text",
+            uid: currentUserId
         })
         .then(() => {
-            //setLoader(false);
             alert("Your joke will be reviewed!");
         })
         .catch((error) => {
             alert(error.message);
-            //setLoader(false);
         });
     
         setCategory("");
@@ -52,11 +55,12 @@ export default function SubmitJoke() {
         setKeywords("");
         setProfileName("");
 
-      
     };
  
-    
-
+    //age limit for 18+ category submission
+    const Uage = users.map(items => items.dob);
+    const getAge = birthDate => Math.floor((new Date() - new Date(birthDate).getTime()) / 3.15576e+10)
+     
     return (
     <>
     <Row lg={3}>
@@ -79,8 +83,9 @@ export default function SubmitJoke() {
                     <option value ="music">MUSIC</option>
                     <option value = "short">QUICK</option>
                     <option value = "holiday">HOLIDAY</option>
-                    <option value = "18+">18+</option>
                     
+                    {(getAge(Uage) >= 18 && getAge(Uage) <= 110)?
+                    <option value = "18+">18+</option>: null }
                 </Form.Control>
             </Form.Group>
             <Form.Group controlId="exampleForm.ControlTextarea1">

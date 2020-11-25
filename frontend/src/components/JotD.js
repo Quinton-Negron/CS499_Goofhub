@@ -4,7 +4,7 @@ import { Card, Container } from 'react-bootstrap';
 
 
 const JotD = props => { 
-{/* Delete this. write your algo for getting data here before the return */}
+
 
 
     return (

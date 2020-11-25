@@ -2,7 +2,7 @@ import React from 'react';
 import { Jumbotron, Container, Row, Col } from 'react-bootstrap';
 import './Jokespage.css';
 import { Imagejokes,Textjokes,Videojokes } from '../components/Jokecard';
-import {useFetch} from '../useFetch';
+import {useFetch} from '../firebase/useFetch';
 
 function Music() {
     //change title accordingly.

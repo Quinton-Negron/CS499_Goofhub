@@ -1,9 +1,13 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import { AuthContext } from "../auth/Auth";
+import firebase from "../firebase/firebase";
 import './Navibar.css';
-import {Navbar,Nav,NavDropdown,Form} from 'react-bootstrap';
+import {Navbar,Nav,Form} from 'react-bootstrap';
 
 
 function Navibar() {
+  const { currentUser } = useContext(AuthContext);
+
   return (
     <div className="Navibar">
       
@@ -22,23 +26,22 @@ function Navibar() {
         
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
+        
         <Nav className="mr-auto"></Nav>
           <Nav className="nav-font">
-            <Nav.Link href="Submitjoke">SUBMIT A JOKE</Nav.Link> 
-            <NavDropdown title="LOG IN" id="collasible-nav-dropdown">
-              <NavDropdown.Item href="Login">LOG IN</NavDropdown.Item>
-              <NavDropdown.Item href="Signup">SIGN UP</NavDropdown.Item>
-              </NavDropdown> 
-         
           
-          <Form inline>
+            <Nav.Link href="Submitjoke">SUBMIT A JOKE</Nav.Link> 
+            {!currentUser ? 
+              ( <Nav.Link href="Login">LOG IN/SIGN UP</Nav.Link> ) :
+              (<><Nav.Link href="Profile">{currentUser.displayName}</Nav.Link> 
+                <Nav.Link href="Login" onClick={() =>firebase.auth().signOut()}>LOG OUT</Nav.Link></>)
+            }
+            <Form inline>
             <Nav.Link href="Search">
             <div className="md-form my-0">
-            
               <i className="fas fa-search text-black ml-0" aria-hidden="true"></i>
             </div>
             </Nav.Link>
-           
           </Form>
           </Nav>
         </Navbar.Collapse>
