@@ -73,7 +73,7 @@ const Profile = () => {
       user.updateEmail(nEmail).then(() => {
        alert("Email updated!");
       }).catch((error) => { alert(error.message); });
-    }).catch((error) => {console.log(error) });
+    }).catch((error) => {console.log("Incorrect email format!") });
     setcurrentPassword1("");
     setnewEmail("");
   }
@@ -188,7 +188,7 @@ const Profile = () => {
                   placeholder="Current Password"/>
             </Form.Group>
             <Form.Group as={Col}>
-                <div type="submit" onClick={() => changeEmail(items,currentPassword1,newEmail)} className="btn-xlg profas">
+                <div type="submit" onClick={() => changeEmail(items,currentPassword1,newEmail)} className="btn-xlg profas1">
                 <i className="fas fa-pen"></i></div>
             </Form.Group>
           </Form.Row>
@@ -216,7 +216,7 @@ const Profile = () => {
                 placeholder="New Password" />
             </Form.Group>  
             <Form.Group as={Col}>
-                <div type="submit" onClick={() => changePassword(currentPassword,newPassword)} className="btn-xlg profas">
+                <div type="submit" onClick={() => changePassword(currentPassword,newPassword)} className="btn-xlg profas1">
                 <i className="fas fa-pen"></i></div>  
             </Form.Group>
           </Form.Row>
