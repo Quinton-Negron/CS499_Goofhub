@@ -23,7 +23,7 @@ const JotD = props => {
         return jokes
     }
     const jokes = useFetch();
-    const no18Jokes = jokes.filter(joke => joke.category!=='18+');
+    const no18Jokes = jokes.filter(joke => joke.category != '18+');
     const items = no18Jokes.map((data) => {
     switch (data.type) {
         case data.type = 'image':
