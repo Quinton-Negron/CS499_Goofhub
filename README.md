@@ -14,4 +14,5 @@ npm install react-bootstrap bootstrap <br />
 npm install react-router-dom <br />
 npm install firebase <br />
 A folder should appear called node_modules <br />
+npm install --save react-json-pretty <br />
 npm start <br />
