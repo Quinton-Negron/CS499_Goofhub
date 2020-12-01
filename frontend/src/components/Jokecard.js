@@ -2,6 +2,7 @@ import React from 'react';
 import { Card, ResponsiveEmbed } from 'react-bootstrap';
 import './Jokecard.css';
 import LikeButton from '../like';
+import './style.css'
 
 
 
@@ -19,8 +20,18 @@ export function Textjokes({data}) {
             </footer>
             </blockquote>
             <Card.Text>
-            {/*}    <small className="text-muted">Share, Rate, Report</small>*/}
-            
+            <body>
+            	<nav>
+      				<div class="dropdown">
+                        <button class="dropbtn">. . .</button>
+                            <div class="dropdown-content">
+                                 <a href="http://localhost:3000/Share">Share</a>
+                                 <a href="http://localhost:3000/Rate">Rate</a>
+                                  <a href="http://localhost:3000/Report">Report</a>
+                                 </div>
+                            </div>
+    			</nav>
+    		</body>
             <LikeButton key = {data.id}/>
             
             </Card.Text>
@@ -29,6 +40,7 @@ export function Textjokes({data}) {
     </Card>
 );
 }
+
 
 //Cards for image jokes
 export function Imagejokes({data}) {
@@ -42,7 +54,18 @@ export function Imagejokes({data}) {
                 </footer>
             </blockquote>
             <Card.Text>
-            {/*    <small className="text-muted">Share, Rate, Report</small>*/}
+            <body>
+            	<nav>
+      				<div class="dropdown">
+                        <button class="dropbtn">. . .</button>
+                            <div class="dropdown-content">
+                                <a href="http://localhost:3000/Share">Share</a>
+                                <a href="http://localhost:3000/Rate">Rate</a>
+                                <a href="http://localhost:3000/Report">Report</a>
+                                </div>
+                            </div>
+    			</nav>
+    		</body>
             <LikeButton dataId = {data.id}/>
             </Card.Text>
         </Card.Body>
@@ -70,7 +93,18 @@ export function Videojokes({data}) {
             </footer>
         </blockquote>
         <Card.Text>
-         {/*   <small className="text-muted">Share, Rate, Report</small>*/}
+        	<body>
+            	<nav>
+      				<div class="dropdown">
+                      <button class="dropbtn">. . .</button>
+                        <div class="dropdown-content">
+                            <a href="http://localhost:3000/Share">Share</a>
+                            <a href="http://localhost:3000/Rate">Rate</a>
+                            <a href="http://localhost:3000/Report">Report</a>
+                         </div>
+                    </div>
+    			</nav>
+    		</body>
          <LikeButton dataId = {data.id}/>
         </Card.Text>
     </Card.Body>
