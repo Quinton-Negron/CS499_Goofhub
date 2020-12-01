@@ -12,8 +12,7 @@ export default function SubmitJoke() {
     const [profilename, setProfileName] = useState("");
    
     //split keywords to an array
-    const words = keywords;
-    const keywordsArr = words.split(', ');
+    const keywordsArr = keywords.split(', ');
 
     //get user's uid from authentication
     const { currentUser } = useContext(AuthContext);
@@ -40,6 +39,7 @@ export default function SubmitJoke() {
             keywords: keywordsArr,
             name: name,
             createdAt: new Date().toJSON().split("T")[0],
+            release: false,
             type: "text",
             uid: currentUserId
         })
@@ -112,7 +112,6 @@ export default function SubmitJoke() {
             <Form.Check inline className="submitAnon"
             label="SUBMIT AS ANONYMOUS"
             type="checkbox"
-            checked={profilename}
             value="Anonymous"
             onChange={(e) => setProfileName(e.currentTarget.value)}
             />
