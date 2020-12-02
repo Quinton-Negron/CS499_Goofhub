@@ -40,10 +40,17 @@ const JotD = props => {
             return (<div>{data.content}</div>)
         }
     })
-    var d = new Date();
-    const random = d.getDate();
+    var d = new Date();          //JotD indexer algo
+    var m = new Date();
+    var y = new Date();
+
+    const day = d.getDate();
+    const month = m.getMonth();
+    const year = y.getFullYear();
+    const random = day + month + year;
+    
     const len = items.length;
-    const JotdIndex = len % random;
+    const JotdIndex = random % len;
     const item = items[JotdIndex];
 
     return (
