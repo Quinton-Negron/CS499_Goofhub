@@ -2,11 +2,19 @@
     width: 440px;
     height: 24rem;
     overflow: hidden;
+    /* border-radius: 4px; */
+    background: transparent;
+    box-shadow: 0 6px 10px rgba(158, 35, 35, 0.08), 0 0 6px rgba(219, 109, 109, 0.05);
+    transition: .3s;
+    cursor: pointer;
 
 }
 
 .categories:hover{
     box-shadow: 5px 10px 20px 1px rgba(0, 0, 0, 0.253) !important;
+    transform: scale(1.03);
+   
+   
 }
 
 .categories-body{
@@ -61,13 +69,6 @@
     object-fit: cover;
 }
 
-.btn-xlg {
-    font-family: 'Blockletter';
-    font-size: 2rem;
-    letter-spacing: 2.5px;
-    background-color: #000;
-}
-
 .frame {
     background-color: rgba(0, 0, 0, 0.349);
     padding-top: 10px;
@@ -78,8 +79,6 @@
     position: relative;
     display: table-cell;
 }
-
-
 
 .deck1 {
     margin-left: 10px;

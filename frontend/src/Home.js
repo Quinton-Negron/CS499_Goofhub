@@ -3,7 +3,7 @@ import './Home.css';
 import JotD from './components/JotD';
 import Cards1 from './components/card'
 import { Container, Row, Col } from 'react-bootstrap'
-import Work3D from './categories/MusicCat'
+
 
 function Home(){
     return(

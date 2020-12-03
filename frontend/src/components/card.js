@@ -29,104 +29,43 @@ function Cards1() {
         <Row >
             <Col>
     <CardDeck className = "deck1">
+    <Card className="categories">
+  <Card.Img 
+  className = "types" 
+  src="https://firebasestorage.googleapis.com/v0/b/goofhub-team.appspot.com/o/HOLIDAY.png?alt=media&token=e47fb8f0-6bcf-4977-a3d9-afd4a4cd5be9" 
+  alt="Card image" />  
+  <a href="Holiday" className="btn btn-primary stretched-link">
+  </a>
+  </Card>
+
   <Card className="categories">
     <Card.Img 
     className = "types" 
-    src="https://firebasestorage.googleapis.com/v0/b/goofhub-team.appspot.com/o/app%2Fcomic.jpg?alt=media&token=56412996-a593-46c6-86be-6ac7d767fbe5" 
+    src="https://firebasestorage.googleapis.com/v0/b/goofhub-team.appspot.com/o/long.png?alt=media&token=700e2c0b-2fa0-4e3a-90d7-2cbc3ff0e6c5" 
     alt="Card image" />
     <a href="Long" className="btn btn-primary stretched-link">
-    <Card.Body>
-    <Button
-          class = "btn-primary.custom-btn"
-          size="xlg"
-          style={{
-            position: "absolute",
-            textAlign: "center",
-            top: "328px",
-            right: "13px",
-            left: "-375px",
-            width: "1000px"
-          }}
-          variant="dark"
-          block
-        >
-          <i>LONG</i>
-        </Button>
-    </Card.Body></a>  
+    </a>  
   </Card>
 
   <Card className="categories">
   <Card.Img 
   className = "types" 
-  src="https://firebasestorage.googleapis.com/v0/b/goofhub-team.appspot.com/o/app%2FMusic.jpg?alt=media&token=81e89973-ae90-4262-a176-2ff456857489" 
+  src="https://firebasestorage.googleapis.com/v0/b/goofhub-team.appspot.com/o/Musiccard.png?alt=media&token=8fc6580d-d63c-427f-abbe-5d140a8386fc" 
   alt="Card image" />  
   <a  href="Music" className="btn btn-primary stretched-link">
-    <Card.Body>
-    <Button
-          size="xlg"
-          style={{
-            position: "absolute",
-            top: "328px",
-            right: "13px",
-            left: "-375px",
-            width: "1000px"
-          }}
-          variant="dark"
-          block
-        >
-          <center><i>MUSIC</i></center>
-        </Button>
-    </Card.Body></a>
+   </a>
   </Card>
 
 
   <Card className="categories">
   <Card.Img 
   className = "types" 
-  src="https://firebasestorage.googleapis.com/v0/b/goofhub-team.appspot.com/o/app%2FText.png?alt=media&token=9dab6406-525b-4ebc-a0d5-091a1860bb37" 
+  src="https://firebasestorage.googleapis.com/v0/b/goofhub-team.appspot.com/o/QUICK.png?alt=media&token=20f8cdea-24a4-40a8-9793-0220d9668d60" 
   alt="Card image" />  
   <a href="Short" className="btn btn-primary stretched-link">
-    <Card.Body>
-    <Button
-          size="xlg"
-          style={{
-            position: "absolute",
-            top: "328px",
-            right: "13px",
-            left: "-375px",
-            width: "1000px"
-          }}
-          variant="dark"
-          block
-        >
-          <center><i>QUICK</i></center>
-        </Button>
-    </Card.Body></a>
+    </a>
   </Card>
 
-  <Card className="categories">
-  <Card.Img 
-  className = "types" 
-  src="https://firebasestorage.googleapis.com/v0/b/goofhub-team.appspot.com/o/app%2FHoliday.png?alt=media&token=dec9483e-22a0-4ab4-92d8-8d4fec1e9f1a" 
-  alt="Card image" />  
-  <a href="Holiday" className="btn btn-primary stretched-link">
-    <Card.Body>
-    <Button
-          size="xlg"
-          style={{
-            position: "absolute",
-            top: "328px",
-            right: "13px",
-            left: "-375px",
-            width: "1000px"
-          }}
-          variant="dark"
-          block
-        >
-          <i>HOLIDAY</i>
-        </Button>
-    </Card.Body></a>
-  </Card>
 
 {/* </Col></Row> */}
 
@@ -140,25 +79,10 @@ function Cards1() {
   <Card className="categories">
     <Card.Img 
     className = "types" 
-    src="https://firebasestorage.googleapis.com/v0/b/goofhub-team.appspot.com/o/app%2Fadult.jpg?alt=media&token=751fe2a6-d9be-4ff3-ba02-a1ce12d3b0e0" 
+    src="https://firebasestorage.googleapis.com/v0/b/goofhub-team.appspot.com/o/ADULT.png?alt=media&token=f6389142-3a5c-47fa-9c73-fa69644c960e" 
     alt="Card image" />  
     <a href="plus18" className="btn btn-primary stretched-link">
-      <Card.Body>
-      <Button
-            size="xlg"
-            style={{
-              position: "absolute",
-              top: "328px",
-              right: "13px",
-              left: "-375px",
-              width: "1000px"
-            }}
-            variant="dark"
-            block
-          >
-          <i>ADULT</i>
-        </Button>
-    </Card.Body></a>
+    </a>
   </Card>
 
 }</CardDeck>
