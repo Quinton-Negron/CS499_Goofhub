@@ -1,6 +1,7 @@
 import React from 'react';
 import { Card, ResponsiveEmbed } from 'react-bootstrap';
 import './Jokecard.css';
+import {useGetUser} from '../firebase/useFetch';
 import LikeButton from '../like';
 import './style.css'
 
@@ -8,6 +9,12 @@ import './style.css'
 
 //Cards for text jokes
 export function Textjokes({data}) {
+    //get username from users collection
+    const user = useGetUser('users',data.uid);
+    const username = (user.map(item => item.username));
+    //if user submitted joke as Anonymous credit goes to Anonymous, otherwise username under profile
+    const Uname = data.name === 'Anonymous'? 'Anonymous': username;
+
     return(
     <Card className="jokebox1" border="dark">
         <Card.Body>
@@ -16,7 +23,7 @@ export function Textjokes({data}) {
                 {data.content}
             </p>
             <footer className="blockquote-footer">
-                {data.name}
+                {Uname}
             </footer>
             </blockquote>
             <Card.Text>
@@ -44,13 +51,19 @@ export function Textjokes({data}) {
 
 //Cards for image jokes
 export function Imagejokes({data}) {
+    //get username from users collection
+    const user = useGetUser('users',data.uid);
+    const username = (user.map(item => item.username));
+    //if user submitted joke as Anonymous credit goes to Anonymous, otherwise username under profile
+    const Uname = data.name === 'Anonymous'? 'Anonymous': username;
+
     return(
     <Card className="jokebox1" border="dark">   
         <Card.Img className="jokebox2" variant="top" src={data.content} />
         <Card.Body>
             <blockquote className="blockquote mb-0">
                 <footer className="blockquote-footer">
-                    {data.name}
+                    {Uname}
                 </footer>
             </blockquote>
             <Card.Text>
@@ -76,6 +89,12 @@ export function Imagejokes({data}) {
 
 //Cards for video jokes
 export function Videojokes({data}) {
+    //get username from users collection
+    const user = useGetUser('users',data.uid);
+    const username = (user.map(item => item.username));
+    //if user submitted joke as Anonymous credit goes to Anonymous, otherwise username under profile
+    const Uname = data.name === 'Anonymous'? 'Anonymous': username;
+
     return(
     <Card className="jokebox1" border="dark"> 
     <React.Fragment>    
@@ -89,7 +108,7 @@ export function Videojokes({data}) {
     <Card.Body>
         <blockquote className="blockquote mb-0">
             <footer className="blockquote-footer">
-                {data.name}
+                {Uname}
             </footer>
         </blockquote>
         <Card.Text>
