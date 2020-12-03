@@ -29,7 +29,7 @@ class LikeButton extends React.Component {
               className="button"
               onClick={this.addLike} 
             > 
-              <i className="far fa-thumbs-up fa-lg" style={{ color: "black" }}></i> {this.state.likes}
+              <i className="far fa-heart fa-2x" style={{ color: "black" }}></i> {/*{this.state.likes} */}
             </button>
           </div>
         );
@@ -39,22 +39,22 @@ class LikeButton extends React.Component {
           <div>
             <button className="button" 
             onClick={this.addLike} id={this.props.dataId}>
-              <i className="fas fa-thumbs-up fa-lg" style={{ color: "black" }}></i>  {this.state.likes}
+              <i className="fas fa-heart fa-2x" style={{ color: "red" }}></i>  {/*{this.state.likes} */}
             </button>
           </div>
         );
       }
-      if (likes > 1) {
-        return (
-          <div>
-            <button className="button" 
-            onClick={this.addLike} >
-              <i className="fas fa-thumbs-up fa-lg" style={{ color: "black" }}></i>{/*{" "}
-              {likes}*/}  {this.state.likes}
-            </button>
-          </div>
-        );
-      }
+      // if (likes > 1) {
+      //   return (
+      //     <div>
+      //       <button className="button" 
+      //       onClick={this.addLike} >
+      //         <i className="fas fa-heart fa-2x" style={{ color: "black" }}></i>{/*{" "}
+      //         // {likes}*/}  {this.state.likes}
+      //       </button>
+      //     </div>
+      //   );
+      // }
     }
 }
     

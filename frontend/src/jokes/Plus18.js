@@ -47,7 +47,7 @@ function Plus18() {
         <React.Fragment>
             <Container fluid >
                 <Jumbotron className="banner">
-                    <h1>{title} Jokes</h1>
+                <h1 style= {{fontSize: "50px"}}>{title} Jokes</h1>
                 </Jumbotron>                      
                 <Row lg={3}>{items}</Row>
             

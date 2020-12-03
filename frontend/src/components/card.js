@@ -32,6 +32,7 @@ function Cards1() {
     <a href="Long" className="btn btn-primary stretched-link">
     <Card.Body>
     <Button
+          class = "btn-primary.custom-btn"
           size="xlg"
           style={{
             position: "absolute",

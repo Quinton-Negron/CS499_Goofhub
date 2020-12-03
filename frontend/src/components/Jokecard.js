@@ -2,7 +2,8 @@ import React from 'react';
 import { Card, ResponsiveEmbed } from 'react-bootstrap';
 import './Jokecard.css';
 import LikeButton from '../like';
-import './style.css'
+import './RateReportShare.css'
+import PostFunctions from './postfunctions';
 
 
 
@@ -16,12 +17,15 @@ export function Textjokes({data}) {
                 {data.content}
             </p>
             <footer className="blockquote-footer">
-                {data.name}
+                <i>{data.name}</i>
             </footer>
             </blockquote>
             <Card.Text>
             <body>
-            	<nav>
+            	
+    		</body>
+            {/* <LikeButton key = {data.id}/> */}
+            {/* <nav>
       				<div class="dropdown">
                         <button class="dropbtn">. . .</button>
                             <div class="dropdown-content">
@@ -29,11 +33,12 @@ export function Textjokes({data}) {
                                  <a href="http://localhost:3000/Rate">Rate</a>
                                   <a href="http://localhost:3000/Report">Report</a>
                                  </div>
-                            </div>
-    			</nav>
-    		</body>
-            <LikeButton key = {data.id}/>
-            
+                            </div> */}
+                            
+    			{/* </nav> */}
+                
+                <div className = "containerpost"><LikeButton/></div>
+                <PostFunctions/>
             </Card.Text>
         </Card.Body>
         
@@ -50,11 +55,11 @@ export function Imagejokes({data}) {
         <Card.Body>
             <blockquote className="blockquote mb-0">
                 <footer className="blockquote-footer">
-                    {data.name}
+                    <i>{data.name}</i>
                 </footer>
             </blockquote>
             <Card.Text>
-            <body>
+            {/* <body>
             	<nav>
       				<div class="dropdown">
                         <button class="dropbtn">. . .</button>
@@ -65,8 +70,9 @@ export function Imagejokes({data}) {
                                 </div>
                             </div>
     			</nav>
-    		</body>
-            <LikeButton dataId = {data.id}/>
+    		</body> */}
+            <div className = "containerpost"><LikeButton/></div>
+                <PostFunctions/>
             </Card.Text>
         </Card.Body>
             
@@ -89,11 +95,11 @@ export function Videojokes({data}) {
     <Card.Body>
         <blockquote className="blockquote mb-0">
             <footer className="blockquote-footer">
-                {data.name}
+                <i>{data.name}</i>
             </footer>
         </blockquote>
         <Card.Text>
-        	<body>
+        	{/* <body>
             	<nav>
       				<div class="dropdown">
                       <button class="dropbtn">. . .</button>
@@ -104,8 +110,9 @@ export function Videojokes({data}) {
                          </div>
                     </div>
     			</nav>
-    		</body>
-         <LikeButton dataId = {data.id}/>
+    		</body> */}
+        <div className = "containerpost"><LikeButton/></div>
+                <PostFunctions/>
         </Card.Text>
     </Card.Body>
     

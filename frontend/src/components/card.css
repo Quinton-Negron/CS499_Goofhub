@@ -62,8 +62,8 @@
 
 .btn-xlg {
     font-family: 'Blockletter';
-    font-size: 1.5rem;
+    font-size: 2rem;
+    letter-spacing: 2.5px;
+    background-color: #000;
 }
-
-
 
