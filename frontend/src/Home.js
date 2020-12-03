@@ -3,6 +3,7 @@ import './Home.css';
 import JotD from './components/JotD';
 import Cards1 from './components/card'
 import { Container, Row, Col } from 'react-bootstrap'
+import Work3D from './categories/MusicCat'
 
 function Home(){
     return(
@@ -18,6 +19,7 @@ function Home(){
 
         <h1 className="home-container">What kind of laugh are you looking for?</h1>
         <Cards1 />
+        
         
         </Container>
                 

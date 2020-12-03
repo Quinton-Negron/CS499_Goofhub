@@ -19,11 +19,16 @@ function Cards1() {
   const getAge = birthDate => Math.floor((new Date() - new Date(birthDate).getTime()) / 3.15576e+10)
   
   return (
-<Container> 
-     
-        <Row className='text-center'>
+<div class= "frame" 
+  style={{width:"1100px", 
+  height: "415px",
+  overflow:"auto",
+  padding:"2px", 
+  paddingTop: "10px"}}>
+    <Container className = "cardcontainer"> 
+        <Row >
             <Col>
-    <CardDeck>
+    <CardDeck className = "deck1">
   <Card className="categories">
     <Card.Img 
     className = "types" 
@@ -122,16 +127,16 @@ function Cards1() {
         </Button>
     </Card.Body></a>
   </Card>
-</CardDeck>
-</Col></Row>
+
+{/* </Col></Row> */}
 
 <br></br>
-  <Row  className='text-center'>
-  <Col>
+  {/* <Row  >
+  <Col> */}
 
 {currentUser && !(getAge(Uage) >= 18 && getAge(Uage) <= 110)? null:
      
-<CardDeck>
+
   <Card className="categories">
     <Card.Img 
     className = "types" 
@@ -155,21 +160,21 @@ function Cards1() {
         </Button>
     </Card.Body></a>
   </Card>
-</CardDeck>
-}
-</Col>
 
+}</CardDeck>
+</Col></Row>
+
+{/* <Col></Col>
 <Col></Col>
 <Col></Col>
 <Col></Col>
-<Col></Col>
-<Col></Col>
-</Row>
+<Col></Col> */}
+{/* </Col></Row> */}
 
 
 
 
-</Container>
+</Container></div>
 );
 }
 
