@@ -32,7 +32,7 @@ export default function SubmitJoke() {
         e.preventDefault();
             
         firebase.firestore()
-        .collection("jokesubmission").doc()
+        .collection("jokes").doc()
         .set({
             category: [Category],
             content: Joke,
@@ -87,6 +87,7 @@ export default function SubmitJoke() {
                     {(getAge(Uage) >= 18 && getAge(Uage) <= 110)?
                     <option value = "18+">18+</option>: null }
                 </Form.Control>
+                <Form.Text className="text-light submitSmallText">CAN'T DECIDE? LEAVE IT ON 'SELECT A CATEGORY' AND LEAVE THE REST TO US</Form.Text>
             </Form.Group>
             <Form.Group controlId="exampleForm.ControlTextarea1">
                 <Form.Label className="submitLabel">Enter Your Joke</Form.Label>

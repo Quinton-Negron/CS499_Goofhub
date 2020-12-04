@@ -37,7 +37,7 @@ function App() {
             <Route path="/music" component={Music} />
             <Route path="/holiday" component={Holiday} />
             <PrivateRoute path="/plus18" component={Plus18} />
-            <Route path="/secretPage" component={addData} />
+            <PrivateRoute path="/secretPage" component={addData} />
           </Switch>
           
           

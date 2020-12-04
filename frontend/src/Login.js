@@ -1,7 +1,7 @@
 import React, { useCallback, useContext } from 'react';
 import { withRouter, Redirect } from "react-router-dom";
 import './Login.css'
-import { Card, Container, Button, Form } from 'react-bootstrap';
+import { Card,Col,Row, Container, Button, Form } from 'react-bootstrap';
 import { AuthContext } from "./auth/Auth";
 import firebase from "./firebase/firebase";
 
@@ -33,24 +33,27 @@ function LogIn({ history }) {
     return (
    
         <Container>
-        <Card className="login">
-            <Card.Body>
+        <Row lg={3}>
+        <Col lg={3}></Col>
+        <Col lg={6}>
+        <Card className="login ">
+            <Card.Body className="ml-4 mr-4">
             <Form onSubmit={handleLogin}> 
-            <Card.Title className= "email1">log in</Card.Title>
+            <Card.Title className= "email1">LOG IN</Card.Title>
             <div className="divider1"></div>
             <Form.Group className="emailaddress" controlId="formBasicEmail">
-            <Form.Label className="fontlabel">EMAIL ADDRESS</Form.Label>
+            <Form.Label className="fontlabel">email address</Form.Label>
             <Form.Control required name="email" type="email" placeholder="name@example.com" />
             </Form.Group>
                         
             <Form.Group controlId="formBasicPassword">
-            <Form.Label className="fontlabel">PASSWORD</Form.Label>
-            <Form.Control required name="password" type="password" placeholder="Enter password" />
+            <Form.Label className="fontlabel">password</Form.Label>
+            <Form.Control  required name="password" type="password" placeholder="Enter password" />
             <Form.Text className="text-light">MUST BE 6-20 CHARACTERS LONG</Form.Text>
             </Form.Group>
         
             <Button
-                className="enter align-content-center relative"
+                className="enter align-content-center "
                 size="lg"
                 variant="warning"
                 type="submit"
@@ -59,7 +62,7 @@ function LogIn({ history }) {
             </Button>
             </Form>
             <Button
-                className="enter1 align-content-center relative"
+                className="enter1 align-content-center "
                 size="lg"
                 variant="warning"
                 href="Forgotpassword"
@@ -68,7 +71,7 @@ function LogIn({ history }) {
             </Button>
             <div className="divider2"></div>
             <Button
-                className="enter align-content-center relative  mb-5"
+                className="enter align-content-center   mb-5"
                 size="lg"
                 variant="warning"
                 href="Signup"
@@ -77,6 +80,9 @@ function LogIn({ history }) {
             </Button>        
             </Card.Body>
         </Card>
+        </Col>
+        <Col lg={3}></Col>
+        </Row>
         </Container>
    
     );

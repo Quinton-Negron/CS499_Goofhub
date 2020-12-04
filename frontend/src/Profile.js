@@ -146,7 +146,7 @@ const Profile = () => {
                
           <Form.Row className="progroup ">
             <Form.Group  as={Col} >
-              <Form.Label className="proWhite" >USERNAME CHANGE</Form.Label>
+              <Form.Label className="proWhite" >GOOF NAME CHANGE</Form.Label>
             </Form.Group>
             <Form.Group as={Col} >
               <Form.Control required 

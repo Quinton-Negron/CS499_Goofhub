@@ -1,7 +1,7 @@
 import React, { useState, useContext } from 'react';
 import { Redirect } from "react-router";
 import './Login.css'
-import { Card, Container, Button, Form } from 'react-bootstrap';
+import { Card, Col, Row, Container, Button, Form } from 'react-bootstrap';
 import { AuthContext } from "./auth/Auth";
 import firebase from "./firebase/firebase";
 
@@ -34,8 +34,11 @@ function ForgotPassword({ history }) {
     return (
    
         <Container>
-        <Card className="login">
-            <Card.Body>
+        <Row lg={3}>
+        <Col lg={3}></Col>
+        <Col lg={6}>
+        <Card className="login ">
+            <Card.Body className=" ml-4 mr-4">
             <Form  onSubmit={sendResetEmail}>
             <Card.Title className= "email1">PASSWORD RESET</Card.Title>
             <div className="divider1"></div>
@@ -66,6 +69,9 @@ function ForgotPassword({ history }) {
             </Button>        
             </Card.Body>
         </Card>
+        </Col>
+        <Col lg={3}></Col>
+        </Row>
         </Container>
    
     );

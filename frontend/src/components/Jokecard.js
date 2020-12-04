@@ -39,6 +39,7 @@ export function Textjokes({data}) {
                             </div>
     			</nav>
     		</body>
+        
             <LikeButton key = {data.id}/>
             
             </Card.Text>

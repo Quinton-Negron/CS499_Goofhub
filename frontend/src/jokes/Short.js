@@ -7,14 +7,18 @@ import {useFetch} from '../firebase/useFetch';
 function Short() {
     //change title accordingly.
     const title = 'Quick';
-    
-    const jokes = useFetch('jokes');
-    //console.log(jokes);
     //change category name based on data.
     const category = 'short';
-    /*Filter jokes to a category for each page. 
+
+    const jokes = useFetch('jokes');
+    //console.log(jokes);
+    //field to release to site if it's true
+    const released = jokes.filter(joke => joke.release===true);
+
+    /*Filter jokes to a category for each page.
+    Category is in an array 
     Displays on revsersed order*/
-    const results = jokes.filter(word => word.category.some(data => data === category));
+    const results = released.filter(word => word.category.some(data => data === category));
     const items = results.reverse().map((data) => {
         switch (data.type){
             case data.type='image': 

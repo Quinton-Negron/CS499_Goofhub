@@ -1,7 +1,7 @@
 import React, { useCallback, useContext } from "react";
 import { withRouter, Redirect } from "react-router";
 import './Login.css'
-import { Card, Container, Button, Form, Col } from 'react-bootstrap';
+import { Card,Row, Container, Button, Form, Col } from 'react-bootstrap';
 import { AuthContext } from "./auth/Auth";
 import firebase from "./firebase/firebase";
 
@@ -64,8 +64,11 @@ function SignUp({ history }) {
      
     return (
         <Container>
+        <Row lg={3}>
+        <Col lg={3}></Col>
+        <Col lg={6}>
         <Card className="login">
-            <Card.Body className="ml-5 mr-5">
+            <Card.Body className="ml-4 mr-4">
             <Form onSubmit={handleSignUp}>
             <Card.Title className= "email1">SIGN UP</Card.Title>
             <div className="divider1"></div>
@@ -88,7 +91,7 @@ function SignUp({ history }) {
             </Form.Group>
 
             <Form.Group>
-            <Form.Label className="fontlabel">UserName</Form.Label>
+            <Form.Label className="fontlabel">Goof Name</Form.Label>
             <Form.Control required name="username" type="username" placeholder="John Doe or an alias" />
             <Form.Text className="text-light">USED FOR CREDITING JOKES SUBMISSION</Form.Text>
             </Form.Group>
@@ -128,6 +131,9 @@ function SignUp({ history }) {
                             
             </Card.Body>
         </Card>
+        </Col>
+        <Col lg={3}></Col>
+        </Row>
         </Container>
     );
 }
