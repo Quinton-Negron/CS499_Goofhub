@@ -1,0 +1,10 @@
+.main-container {
+    
+    display: inline-flex;
+    flex-direction: row;
+    /* margin-top: 15px; */
+}
+
+
+
+
