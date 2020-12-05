@@ -5,7 +5,7 @@ import { Card,Col,Row, Container, Button, Form } from 'react-bootstrap';
 import { AuthContext } from "./auth/Auth";
 import firebase from "./firebase/firebase";
 
-function LogIn({ history }) {
+function LogIn() {
     
     const handleLogin = useCallback(
         async event => {
@@ -16,12 +16,11 @@ function LogIn({ history }) {
             await firebase
               .auth()
               .signInWithEmailAndPassword(email.value, password.value);
-              history.push("/");
           } catch (error) {
             alert(error);
           }
         },
-        [history]
+        []
       );
     
       //if user is logged in going to this page redirects them to Home page

@@ -5,7 +5,7 @@ import { Card,Row, Container, Button, Form, Col } from 'react-bootstrap';
 import { AuthContext } from "./auth/Auth";
 import firebase from "./firebase/firebase";
 
-function SignUp({ history }) {
+function SignUp() {
     
     //convert yyyy-mm-dd to mm/dd/yyyy
     function changeDateFormat(inputDate){  // expects Y-m-d
@@ -48,13 +48,13 @@ function SignUp({ history }) {
                 });
             })
             .then(() => {
-                history.push("/");
+                window.location.reload();
             });
           
         } catch (error) {
           alert(error);
         }
-    }, [history]);
+    }, []);
 
     const { currentUser } = useContext(AuthContext);
     

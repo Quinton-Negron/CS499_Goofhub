@@ -38,12 +38,13 @@ const Profile = () => {
           displayName: newName
           });
     }).then(() => {
-        alert("Username has changed. Refresh your page for latest update.");
+        alert("Username has changed.");
+        window.location.reload();
     }).catch((error) => {alert(error.message);
     });
 
     setName("");
-      
+    
 };
 
   //needs to reauthenticate when changing email or password
@@ -108,7 +109,7 @@ const Profile = () => {
             alt="Profile"
             className="rounded-circle proimg-fluid"
           />
-          <div className="btn-xlg proAddBtn">
+          <div className="btn-lg proAddBtn">
           <i className="fas fa-plus-circle"></i></div>
         <Row>
             <Col  className="mt-5 align-items-center profile-header">
@@ -158,7 +159,7 @@ const Profile = () => {
                 placeholder={items.username}/>
             </Form.Group>
             <Form.Group as={Col} >
-                <div type="submit" onClick={() => editName(items)} className="btn-xlg profas">
+                <div type="submit" onClick={() => editName(items)} className="btn-lg profas">
                 <i className="fas fa-pen"></i></div>
             </Form.Group>
           </Form.Row>
@@ -188,7 +189,7 @@ const Profile = () => {
                   placeholder="Current Password"/>
             </Form.Group>
             <Form.Group as={Col}>
-                <div type="submit" onClick={() => changeEmail(items,currentPassword1,newEmail)} className="btn-xlg profas1">
+                <div type="submit" onClick={() => changeEmail(items,currentPassword1,newEmail)} className="btn-lg profas1">
                 <i className="fas fa-pen"></i></div>
             </Form.Group>
           </Form.Row>
@@ -216,7 +217,7 @@ const Profile = () => {
                 placeholder="New Password" />
             </Form.Group>  
             <Form.Group as={Col}>
-                <div type="submit" onClick={() => changePassword(currentPassword,newPassword)} className="btn-xlg profas1">
+                <div type="submit" onClick={() => changePassword(currentPassword,newPassword)} className="btn-lg profas1">
                 <i className="fas fa-pen"></i></div>  
             </Form.Group>
           </Form.Row>
