@@ -1,6 +1,6 @@
 import React, { useContext } from 'react';
 import './card.css';
-import { Card, CardDeck, Button } from 'react-bootstrap';
+import { Card, CardDeck } from 'react-bootstrap';
 import { Container } from 'react-bootstrap';
 import { Row, Col } from 'react-bootstrap';
 import { AuthContext } from "../auth/Auth";

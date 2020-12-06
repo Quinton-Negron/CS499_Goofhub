@@ -7,7 +7,7 @@ import { AuthContext } from "../auth/Auth";
 
 function Plus18() {
     //change title on banner
-    const title = '18+';
+    const title = 'Adults Only';
     //change category name based on data.
     const category = '18+';
 
@@ -50,7 +50,7 @@ function Plus18() {
         <React.Fragment>
             <Container fluid >
                 <Jumbotron className="banner">
-                <h1 style= {{fontSize: "50px"}}>{title} Jokes</h1>
+                <h1 className ="plus18" style= {{fontSize: "50px"}}>{title} Jokes</h1>
                 </Jumbotron>                      
                 <Row lg={3}>{items}</Row>
             
