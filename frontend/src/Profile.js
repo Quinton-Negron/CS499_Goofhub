@@ -180,7 +180,7 @@ const Profile = () => {
             <Form.Group as={Col} >
                 <Form.Control required 
                   controlid="formPlaintextEmail"
-                  className="procontrol proText" 
+                  className="procontrol proEmail" 
                   value={newEmail}
                   onChange={(e) => setnewEmail(e.target.value)}
                   size="sm" 
@@ -215,7 +215,7 @@ const Profile = () => {
             <Form.Group as={Col} >
             <Form.Control required 
                 controlid="formPlaintextPassword1"
-                className="procontrol proText" 
+                className="procontrol proEmail" 
                 value={currentPassword}
                 onChange={(e) => setcurrentPassword(e.target.value)}
                 size="sm" 
