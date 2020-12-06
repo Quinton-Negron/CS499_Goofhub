@@ -13,7 +13,7 @@
 
 .submitTitle {
     background-color:rgb(255, 235, 51);
-    border: 5px black solid;
+    border: 3px black solid;
     vertical-align: middle;
     text-align: center;
     font-family: 'CartoonistKooky';
@@ -35,19 +35,19 @@
 }
 
 .submitPlaceholder {
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-family: 'Yanone Kaffeesatz', sans-serif;
     font-stretch: expanded;
     font-size: 20px;
 }
 .submitCat {
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-family: 'Yanone Kaffeesatz', sans-serif;
     color: white;
     font-size: 15px;
    
 }
 
 .submitAnon {
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-family: 'Yanone Kaffeesatz', sans-serif;
     font-stretch: expanded;
     color: white;
     font-size: 20px;
@@ -61,7 +61,7 @@
 
 }
 .submitSmallText {
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-family: 'Yanone Kaffeesatz', sans-serif;
     font-size: 15px;
 }
 
