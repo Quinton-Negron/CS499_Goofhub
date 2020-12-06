@@ -20,11 +20,12 @@ function Cards1() {
   
   return (
 <div class= "frame" 
-  style={{width:"1100px", 
+  style={{maxWidth:"1100px", 
   height: "415px",
   overflow:"auto",
   padding:"2px", 
-  paddingTop: "10px"}}>
+  paddingTop: "10px"}}
+  >
     <Container className = "cardcontainer"> 
         <Row >
             <Col>
