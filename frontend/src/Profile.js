@@ -159,14 +159,14 @@ const Profile = () => {
                 placeholder={items.username}/>
             </Form.Group>
             <Form.Group as={Col} >
-                <div type="submit" onClick={() => editName(items)} className="btn-lg profas">
+                <div type="submit" onClick={() => editName(items)} className="profas">
                 {/* <i className="fas fa-pen"></i> */}
                 <Button
                 className="enter1 align-content-center "
                 size="sm"
                 variant="outline-light"
                 style = {{color: "black", fontSize: "25px"}}
-                > Submit
+                > UPDATE
             </Button>
                 </div>
             </Form.Group>
@@ -197,13 +197,13 @@ const Profile = () => {
                   placeholder="Current Password"/>
             </Form.Group>
             <Form.Group as={Col}>
-                <div type="submit" onClick={() => changeEmail(items,currentPassword1,newEmail)} className="btn-lg profas1">
+                <div type="submit" onClick={() => changeEmail(items,currentPassword1,newEmail)} className="profas1">
                 <Button
                 className="enter1 align-content-center "
                 size="sm"
                 variant="outline-light"
                 style = {{ color: "black", fontSize: "25px"}}
-                > Submit
+                > UPDATE
             </Button></div>
             </Form.Group>
           </Form.Row>
@@ -231,13 +231,13 @@ const Profile = () => {
                 placeholder="New Password" />
             </Form.Group>  
             <Form.Group as={Col}>
-                <div type="submit" onClick={() => changePassword(currentPassword,newPassword)} className="btn-lg profas1">
+                <div type="submit" onClick={() => changePassword(currentPassword,newPassword)} className=" profas1">
                 <Button
                 className="enter1 align-content-center "
-                size="sm"
+                size="sm" 
                 variant="outline-light"
                 style = {{color: "black", fontSize: "25px"}}
-                > Submit
+                > UPDATE
             </Button></div>  
             </Form.Group>
           </Form.Row>
