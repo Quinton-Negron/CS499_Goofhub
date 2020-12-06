@@ -1,6 +1,6 @@
 import React, { useContext, useState } from "react";
 import { AuthContext } from "./auth/Auth";
-import { Row, Col, Form,Card } from "react-bootstrap";
+import { Row, Col, Form,Card, Button } from "react-bootstrap";
 import firebase from "./firebase/firebase";
 import {useGetUser} from "./firebase/useFetch";
 import './Profile.css';
@@ -160,7 +160,15 @@ const Profile = () => {
             </Form.Group>
             <Form.Group as={Col} >
                 <div type="submit" onClick={() => editName(items)} className="btn-lg profas">
-                <i className="fas fa-pen"></i></div>
+                {/* <i className="fas fa-pen"></i> */}
+                <Button
+                className="enter1 align-content-center "
+                size="sm"
+                variant="outline-light"
+                style = {{color: "black", fontSize: "25px"}}
+                > Submit
+            </Button>
+                </div>
             </Form.Group>
           </Form.Row>
           
@@ -190,7 +198,13 @@ const Profile = () => {
             </Form.Group>
             <Form.Group as={Col}>
                 <div type="submit" onClick={() => changeEmail(items,currentPassword1,newEmail)} className="btn-lg profas1">
-                <i className="fas fa-pen"></i></div>
+                <Button
+                className="enter1 align-content-center "
+                size="sm"
+                variant="outline-light"
+                style = {{ color: "black", fontSize: "25px"}}
+                > Submit
+            </Button></div>
             </Form.Group>
           </Form.Row>
 
@@ -218,7 +232,13 @@ const Profile = () => {
             </Form.Group>  
             <Form.Group as={Col}>
                 <div type="submit" onClick={() => changePassword(currentPassword,newPassword)} className="btn-lg profas1">
-                <i className="fas fa-pen"></i></div>  
+                <Button
+                className="enter1 align-content-center "
+                size="sm"
+                variant="outline-light"
+                style = {{color: "black", fontSize: "25px"}}
+                > Submit
+            </Button></div>  
             </Form.Group>
           </Form.Row>
         </Form>

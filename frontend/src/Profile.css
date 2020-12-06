@@ -11,17 +11,16 @@
 }
 
 .proCardBody {
-    background-color: #cdc51a !important;
+    background-color: #14140636 !important;
     border-radius: 5rem;
     /*width: 450px;*/
     margin: 30px;
     padding-left: 20px;
     padding-right: 20px;
-    box-shadow: 2px 5px 10px 5px #b7b210;
 }
 .proSideCard {
-    background-color: #cdc51a !important;
-    box-shadow: 2px 3px 7px 3px #b7b210;
+    background-color: #14140646 !important;
+    /* box-shadow: 1px 1px 1px 1px #b7b210; */
     border: none;
     margin-left: 20px;
     /* margin-right: 20px; */
@@ -66,7 +65,7 @@
 
 .proForm {
    
-    background-color:#b7b210 !important;
+    background-color:#14140600 !important;
     padding-left: 15px;
     padding-right: 15px;
 }
@@ -133,8 +132,8 @@
 
 
 .profas {
-    margin-top: 1.5rem;
+    margin-right: 1.5rem;
 }
 .profas1 {
-    margin-top: 2.5rem;
+    margin-right: 1.5rem;
 }
