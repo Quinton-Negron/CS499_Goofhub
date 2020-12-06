@@ -8,18 +8,18 @@
     margin-left: 10px;
     padding-left: 20px;
     padding-right: 20px;
-    box-shadow: 2px 10px 30px 10px rgb(90, 94, 94);
+    box-shadow: 2px -2px 80px 7px rgba(27, 49, 49, 0.849);
 }
 
 .submitTitle {
     background-color:rgb(255, 235, 51);
-    border: 3px black solid;
+    border: 5px black solid;
     vertical-align: middle;
     text-align: center;
     font-family: 'CartoonistKooky';
     font-size: 40px;
     font-style: italic;
-    
+    box-shadow: 2px 25px 80px 7px  rgba(0, 0, 0, 0.473);
     border-top-left-radius: 1rem;
     border-top-right-radius: 1rem;
     margin-right: -20px;
