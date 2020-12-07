@@ -23,10 +23,18 @@ function AddData() {
         firebase.firestore().collection('jokes')
           .doc(jokes.id)
           .delete()
-          .then(() => {console.log("deleted!");
+          .then(() => {console.log("Deleted in firestore!");
           }).catch((error) => {alert(error.message);
           });       
-  };
+
+        if(jokes.type !== 'image'){//deletes images from storage
+            return false;
+        }
+        let imageRef = firebase.storage().refFromURL(jokes.content);
+        imageRef.delete().then(() => {
+            console.log("Deleted in storage");
+        }).catch(err => console.log(err));
+    };
     
     const boolVal = relVal === 'true'? Boolean(relVal) : false
     function editRelease(jokes) {

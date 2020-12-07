@@ -12,7 +12,7 @@ export default function SubmitVideo() {
     const [profilename, setProfileName] = useState("");
    
     //split keywords to an array
-    const keywordsArr = keywords.split(', ');
+    const keywordsArr = keywords.toLowerCase().split(/\s*[\s,]\s*/);
 
     //get user's uid from authentication
     const { currentUser } = useContext(AuthContext);
@@ -30,25 +30,23 @@ export default function SubmitVideo() {
     const handleSubmit = (e) => {
         e.preventDefault();
 
-        const youtube_regex = /^.*(youtu\.be\/|vi?\/|u\/\w\/|embed\/|\?vi?=|&vi?=)([^#&?]*).*/
-        const newUrl = [];
-        const parsed = link.match(youtube_regex);
-        const youTubeID = (parsed && parsed[2]) ? (newUrl.push(parsed[2])).toString() : '';
-        const youTubeLink = `https://www.youtube.com/embed/${youTubeID}`;
-        if (youTubeID === '') {
+        //check that it's a youtube link
+        const youtube_regex = /(?:youtube(?:-nocookie)?\.com\/(?:[^/\n\s]+\/\S+\/|(?:v|e(?:mbed)?)\/|\S*?[?&]v=)|youtu\.be\/)([a-zA-Z0-9_-]{11})/; 
+        if (youtube_regex.test(link) === false) {
             alert('Unrecognizable YouTube link');
-            setCategory('');
+            setCategory('other');
             setLink('');
             setKeywords('');
             setProfileName('');
             return false;
         }
+        const youTubeID = link.match(youtube_regex)[1];
                 
         firebase.firestore()
         .collection("jokes").doc()
         .set({
             category: [Category],
-            content: youTubeLink,
+            content: `https://www.youtube.com/embed/${youTubeID}`,
             link: link,
             keywords: keywordsArr,
             name: name,
@@ -64,7 +62,7 @@ export default function SubmitVideo() {
             alert(error.message);
         });
         
-        setCategory("");
+        setCategory("other");
         setLink("");
         setKeywords("");
         setProfileName("");

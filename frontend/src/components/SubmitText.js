@@ -12,7 +12,7 @@ export default function SubmitText() {
     const [profilename, setProfileName] = useState("");
    
     //split keywords to an array
-    const keywordsArr = keywords.split(', ');
+    const keywordsArr = keywords.toLowerCase().split(/\s*[\s,]\s*/);
 
     //get user's uid from authentication
     const { currentUser } = useContext(AuthContext);
@@ -49,7 +49,7 @@ export default function SubmitText() {
             alert(error.message);
         });
     
-        setCategory("");
+        setCategory("other");
         setJoke("");
         setKeywords("");
         setProfileName("");

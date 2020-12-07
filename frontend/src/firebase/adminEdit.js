@@ -6,6 +6,7 @@ export const EditFields = ({ joke }) => {
     const [category, setCategory] = useState(joke.category);
     const [keywords, setKeywords] = useState(joke.keywords);
     const [type, setType] = useState(joke.type);
+    const [content, setContent] = useState(joke.content);
     
     const categoryArr = category.toString().split(',');
     function editCat() {
@@ -36,8 +37,33 @@ export const EditFields = ({ joke }) => {
         
     };
 
+    function editContent() {
+        firebase.firestore().collection('jokes')
+        .doc(joke.id)
+        .update({...joke, content: content})
+        .then(() => {console.log("updated!");
+        }).catch((error) => {alert(error.message);
+        }); 
+        
+    };
+
     return(
         <Form>
+            {joke.type !== 'image' ? 
+            <Form.Group as={Row} className="align-items-left">
+                <Form.Label column sm="auto">content:</Form.Label>
+                <Col sm="auto">
+                <Form.Control
+                    value={content}
+                    onChange={(e) => setContent(e.target.value)}
+                    /> 
+                </Col>
+                <Button size='sm' onClick={() => editContent()}>
+                    Update
+                </Button>
+            </Form.Group>
+            : null
+            }
             <Form.Group as={Row} className="align-items-left">
                 <Form.Label column sm="auto">category:</Form.Label>
                 <Col sm="auto">

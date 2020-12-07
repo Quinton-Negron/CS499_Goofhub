@@ -16,7 +16,7 @@ export default function SubmitImage() {
     const [error, setError] = useState("");
 
     //split keywords to an array
-    const keywordsArr = keywords.split(', ');
+    const keywordsArr = keywords.toLowerCase().split(/\s*[\s,]\s*/);
 
     //get user's uid from authentication
     const { currentUser } = useContext(AuthContext);
@@ -98,7 +98,7 @@ export default function SubmitImage() {
         } else {
         setError("Error please choose an image to upload");
         }
-        setCategory("");
+        setCategory("other");
         setUrl("");
         setKeywords("");
         setProfileName("");
