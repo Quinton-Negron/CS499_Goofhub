@@ -23,11 +23,15 @@ const Profile = () => {
   //updates username and displayName
   function editName(users) {
     
-    //if input has blank spaces use original displayName, othewise use new input
-    const newName = (regex.test(name) === true) ? currentUser.displayName : name;
-    
+    //input cannot be a blank space
+    if(regex.test(name) === true){
+      alert('Invalid input');
+      setName("");
+      return false;
+    }
+
     const updateUsername = {
-      username: newName,
+      username: name,
     };
     firebase.firestore().collection("users")
     .doc(users.id)
@@ -35,7 +39,7 @@ const Profile = () => {
     .then(() => {//update in authentication
       const user = firebase.auth().currentUser;
       user.updateProfile({
-          displayName: newName
+          displayName: name
           });
     }).then(() => {
         alert("Username has changed.");
@@ -58,11 +62,16 @@ const Profile = () => {
   //updates email in firestore and authentication
   function changeEmail(users, currentPassword1, newEmail) {
     const regex1 = /[\w\d.-]+@[\w\d.-]+\.[\w\d.-]+/;//regular expression for valid email
-    //if input has blank spaces display an alert, othewise use new input
-    const nEmail = (regex1.test(newEmail) === false || regex.test(newEmail) === true) ? alert("Incorrect email format!") : newEmail;
-    
+    //input cannot be a blank space
+    if (regex1.test(newEmail) === false || regex.test(newEmail) === true) {
+      alert("Incorrect email format!");
+      setcurrentPassword1("");
+      setnewEmail("");
+      return false;
+    }
+
     const updateEmail = {
-      email: nEmail,
+      email: newEmail,
     };
     reauthenticate(currentPassword1)
     .then(() => {//creates user in firestore
@@ -71,7 +80,7 @@ const Profile = () => {
       .update(updateEmail)//update in firestore
     }).then(() => {
       const user = firebase.auth().currentUser;
-      user.updateEmail(nEmail).then(() => {
+      user.updateEmail(newEmail).then(() => {
        alert("Email updated!");
       }).catch((error) => { alert(error.message); });
     }).catch((error) => {console.log("Incorrect email format!") });

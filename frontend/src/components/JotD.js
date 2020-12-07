@@ -11,8 +11,8 @@ const JotD = props => {
 
         useEffect(() => {
 
-            db.collection('jokes')
-                .onSnapshot((snapshot) => {
+            db.collection('jokes').get()
+                .then((snapshot) => {
                     const newJokes = snapshot.docs.map((doc) => ({
                         id: doc.id, ...doc.data()
                     }))
