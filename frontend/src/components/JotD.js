@@ -49,7 +49,7 @@ const JotD = props => {
     const day = d.getDate();
     const month = m.getMonth();
     const year = y.getFullYear();
-    const random = day + month + year;
+    const random = day + month + year + 7;
 
     const len = items.length;
     var JotdIndex = random % len;
