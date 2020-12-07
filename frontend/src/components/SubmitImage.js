@@ -107,7 +107,7 @@ export default function SubmitImage() {
     //age limit for 18+ category submission
     const Uage = users.map(items => items.dob);
     const getAge = birthDate => Math.floor((new Date() - new Date(birthDate).getTime()) / 3.15576e+10)
-    //console.log(getAge(Uage));
+
     return (
         <>
     <Row lg={3}>
@@ -151,13 +151,14 @@ export default function SubmitImage() {
                         <p style={{color:"red"}}>{error}</p>
                         {progress > 0 ? <progress value={progress} max="100" /> : ""}
                     </div>
-                
+                    <div className=" align-content-center">
                     {url ? (
                         <img src={url} 
                             width="300px"
                             height="auto" 
                             alt="Uploaded images" />
                     ) : null}
+                    </div>
             </Form.Group>
             <Form.Group controlId="exampleForm.ControlInput1">
                 <Form.Label className="submitLabel">Keywords</Form.Label>

@@ -24,7 +24,7 @@
 
 .submitTitle {
     background-color:rgb(255, 235, 51);
-    border: 3px black solid;
+    border: 5px black solid;
     vertical-align: middle;
     text-align: center;
     font-family: 'CartoonistKooky';
@@ -50,12 +50,7 @@
     font-stretch: expanded;
     font-size: 20px;
 }
-.submitCat {
-    font-family: 'Yanone Kaffeesatz', sans-serif;
-    color: white;
-    font-size: 15px;
-   
-}
+
 
 .submitAnon {
     font-family: 'Yanone Kaffeesatz', sans-serif;
