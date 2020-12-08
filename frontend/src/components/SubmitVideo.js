@@ -106,7 +106,7 @@ export default function SubmitVideo() {
                 <Form.Label className="submitLabel">Enter Your Video Joke</Form.Label>
                 <Form.Control className="submitPlaceholder"
                     as="textarea" 
-                    rows={1} 
+                    rows={2} 
                     required
                     placeholder="Enter a Youtube link that starts with http://www.youtube.com/ or http://youtu.be/ "
                     value={link}
