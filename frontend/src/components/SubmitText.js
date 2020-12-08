@@ -66,7 +66,7 @@ export default function SubmitText() {
     <Col lg={2}></Col>
     <Col lg={8}>
     <Card className="submitContainer submitContainerText">
-        <Card.Body className="submitTitle">SUBMIT YOUR TEXT JOKE</Card.Body>
+        <Card.Body className="submitTitle">SUBMIT YOUR <span className = "typejoke" >TEXT</span> JOKE</Card.Body>
         <Form  onSubmit={handleSubmit}>
             <Form.Group controlId="exampleForm.ControlSelect2">
                 <Form.Label className="submitLabel mt-3">What kind of Laugh is your Joke?</Form.Label>
