@@ -95,7 +95,7 @@ export default function SubmitText() {
                     as="textarea" 
                     rows={3} 
                     required
-                    placeholder="Make us laugh!"
+                    placeholder="Make us laugh with your words!"
                     value={Joke}
                     onChange={(e) => setJoke(e.target.value)}
                     />
