@@ -19,7 +19,7 @@ function Cards1() {
   const getAge = birthDate => Math.floor((new Date() - new Date(birthDate).getTime()) / 3.15576e+10)
   
   return (
-<div class= "frame" 
+<div className= "frame" 
   style={{maxWidth:"1100px", 
   height: "415px",
   overflow:"auto",

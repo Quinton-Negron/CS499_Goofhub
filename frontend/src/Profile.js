@@ -88,6 +88,7 @@ const Profile = () => {
     setnewEmail("");
   }
 
+  //const regex2 = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,20}$/;//6-20 char, 1 num dig, 1 lower, 1 upper
   //change password 
   function changePassword(currentPassword, newPassword) {
     const nPassword = (regex.test(newPassword) === true) ? null : newPassword;

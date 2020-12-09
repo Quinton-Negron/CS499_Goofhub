@@ -29,7 +29,7 @@ export default function SubmitJoke() {
         value='text'
         onChange={(e)=>{ setRadio(e.target.value) }}
         style = {{fontFamily: "BuiltTitlingRg-Regular", fontSize: "30px"}}
-        class="onoffswitch-checkbox"
+        className="onoffswitch-checkbox"
       />
       <Form.Check
         custom
@@ -41,7 +41,7 @@ export default function SubmitJoke() {
         value='image'
         onChange={(e)=>{ setRadio(e.target.value) }}
         style = {{fontFamily: "BuiltTitlingRg-Regular", fontSize: "30px"}}
-        class="custom-control-input1"
+        className="custom-control-input1"
       />
       <Form.Check
         custom

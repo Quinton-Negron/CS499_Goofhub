@@ -19,12 +19,18 @@ function SignUp() {
     
         return month + '/' + day + '/' + year;
     }
+    //const regex = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,20}$/;//6-20 char, 1 num dig, 1 lower, 1 upper
+    const regex = /^\s*$/;//regular expression for blank spaces
     const handleSignUp = useCallback(async event => {
         event.preventDefault();
         const { email, password, first, last, dob, username } = event.target.elements;
-        
+       
         const newDate = changeDateFormat(dob.value);
-
+        if(regex.test(password.value) === true) {
+            alert('Invalid password!')
+            return false;
+            
+        }
         try {
           firebase
             .auth()
@@ -54,6 +60,7 @@ function SignUp() {
         } catch (error) {
           alert(error);
         }
+        // eslint-disable-next-line
     }, []);
 
     const { currentUser } = useContext(AuthContext);
@@ -105,7 +112,7 @@ function SignUp() {
             <Form.Group controlId="formBasicPassword">
             <Form.Label className="fontlabel">password</Form.Label>
             <Form.Control  required name="password" type="password" placeholder="Enter password" />
-            <Form.Text className="text-light">MUST BE 6-20 CHARACTERS LONG</Form.Text>
+            <Form.Text className="text-light">MUST BE 6-20 CHARACTERS LONG, CONTAINS AT LEAST ONE NUMERIC DIGIT, ONE UPPERCASE, ONE LOWERCASE LETTER</Form.Text>
             </Form.Group>
             
         
