@@ -45,11 +45,13 @@ const JotD = props => {
     var d = new Date();          //JotD indexer algo
     var m = new Date();
     var y = new Date();
+    var min = new Date();       //minute added for demo purposes
 
     const day = d.getDate();
     const month = m.getMonth();
     const year = y.getFullYear();
-    const random = day + month + year + 7;
+    const minutes = min.getMinutes();
+    const random = day + month + year + minutes + 7;
 
     const len = items.length;
     var JotdIndex = random % len;
