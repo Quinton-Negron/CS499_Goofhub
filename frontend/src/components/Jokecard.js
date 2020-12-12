@@ -2,10 +2,6 @@ import React from 'react';
 import { Card, ResponsiveEmbed } from 'react-bootstrap';
 import './Jokecard.css';
 import {useGetUser} from '../firebase/useFetch';
-//import LikeButton from '../like';
-//import './RateReportShare.css'
-//import PostFunctions from './postfunctions';
-
 
 
 //Cards for text jokes
@@ -28,24 +24,6 @@ export function Textjokes({data}) {
             </footer>
             </blockquote>
             <Card.Text>
-            <body>
-            	
-    		</body>
-            {/* <LikeButton key = {data.id}/> */}
-            {/* <nav>
-      				<div class="dropdown">
-                        <button class="dropbtn">. . .</button>
-                            <div class="dropdown-content">
-                                 <a href="http://localhost:3000/Share">Share</a>
-                                 <a href="http://localhost:3000/Rate">Rate</a>
-                                  <a href="http://localhost:3000/Report">Report</a>
-                                 </div>
-                            </div> */}
-                            
-    			{/* </nav> */}
-                
-               {/* <div className = "containerpost"><LikeButton/></div>
-                <PostFunctions/>*/}
             </Card.Text>
         </Card.Body>
         
@@ -72,20 +50,6 @@ export function Imagejokes({data}) {
                 </footer>
             </blockquote>
             <Card.Text>
-            {/* <body>
-            	<nav>
-      				<div class="dropdown">
-                        <button class="dropbtn">. . .</button>
-                            <div class="dropdown-content">
-                                <a href="http://localhost:3000/Share">Share</a>
-                                <a href="http://localhost:3000/Rate">Rate</a>
-                                <a href="http://localhost:3000/Report">Report</a>
-                                </div>
-                            </div>
-    			</nav>
-    		</body> 
-            <div className = "containerpost"><LikeButton/></div>
-                <PostFunctions/>*/}
             </Card.Text>
         </Card.Body>
             
@@ -118,20 +82,6 @@ export function Videojokes({data}) {
             </footer>
         </blockquote>
         <Card.Text>
-        	{/* <body>
-            	<nav>
-      				<div class="dropdown">
-                      <button class="dropbtn">. . .</button>
-                        <div class="dropdown-content">
-                            <a href="http://localhost:3000/Share">Share</a>
-                            <a href="http://localhost:3000/Rate">Rate</a>
-                            <a href="http://localhost:3000/Report">Report</a>
-                         </div>
-                    </div>
-    			</nav>
-    		</body> 
-        <div className = "containerpost"><LikeButton/></div>
-                <PostFunctions/>*/}
         </Card.Text>
     </Card.Body>
     

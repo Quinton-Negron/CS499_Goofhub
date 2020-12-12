@@ -3,6 +3,7 @@ import './components/Searchbar.css';
 import { Container, Row, Col,Form, Jumbotron } from 'react-bootstrap';
 import { Imagejokes,Textjokes,Videojokes } from './components/Jokecard';
 import firebase from "./firebase/firebase";
+import './joke.css';
 
 const db = firebase.firestore();
 function Search() {
@@ -63,7 +64,9 @@ function Search() {
         id={`custom-inline-${radio}-0`}
         checked={radio === 'all'}
         value='all'
-        onChange={(e)=>{ setRadio(e.target.value) }}
+        onChange={(e)=>{ setRadio(e.target.value)}}
+        style = {{fontFamily: "BuiltTitlingRg-Regular", fontSize: "30px"}}
+        className="onoffswitch-checkbox"
       />
       <Form.Check
         custom
@@ -74,6 +77,8 @@ function Search() {
         checked={radio === 'text'}
         value='text'
         onChange={(e)=>{ setRadio(e.target.value) }}
+        style = {{fontFamily: "BuiltTitlingRg-Regular", fontSize: "30px"}}
+        className="onoffswitch-checkbox"
       />
       <Form.Check
         custom
@@ -84,6 +89,8 @@ function Search() {
         checked={radio === 'image'}
         value='image'
         onChange={(e)=>{ setRadio(e.target.value) }}
+        style = {{fontFamily: "BuiltTitlingRg-Regular", fontSize: "30px"}}
+        className="onoffswitch-checkbox"
       />
       <Form.Check
         custom
@@ -94,6 +101,8 @@ function Search() {
         checked={radio === 'video'}
         value='video'
         onChange={(e)=>{ setRadio(e.target.value) }}
+        style = {{fontFamily: "BuiltTitlingRg-Regular", fontSize: "30px"}}
+        className="onoffswitch-checkbox"
       />
     </div>  
   </Form>
