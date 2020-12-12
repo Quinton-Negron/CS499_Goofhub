@@ -14,8 +14,11 @@ function AddData() {
 
     const joke = useSubmission('jokes');
     //console.log(joke);
-    const items = JSON.stringify(joke);
-    //console.log(items);
+    const sortedByDate = joke.sort(function(a, b) {
+        var dateA = new Date(a.createdAt), dateB = new Date(b.createdAt);
+        return dateA - dateB;
+    });
+    const items = JSON.stringify(sortedByDate);
  
     const [relVal, setRelVal] = useState("");
     
@@ -27,7 +30,7 @@ function AddData() {
           }).catch((error) => {alert(error.message);
           });       
 
-        if(jokes.type !== 'image'){//deletes images from storage
+        if(jokes.type !== 'image'){//deletes image from storage
             return false;
         }
         let imageRef = firebase.storage().refFromURL(jokes.content);
@@ -59,7 +62,7 @@ function AddData() {
         case info.type='text': 
             return (<div> {info.content}</div> )
         default: 
-            return (<div> {info.content}</div> )
+            return null
     }}
 
     return(

@@ -41,7 +41,7 @@ export default function SubmitImage() {
                 setImage(file);
             } else {
                 console.log("error");
-                setError("error please upload a image file");
+                setError("error please upload an image file");
             }
         }
     };

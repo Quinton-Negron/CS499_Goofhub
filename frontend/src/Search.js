@@ -34,7 +34,7 @@ function Search() {
      
   const results = no18Jokes.filter(word => word.keywords.some(data => data === searchTerm.toLowerCase() && data !== ""));
   //console.log(results);
-  //for radio selection
+  //radio selection
   const filterType = radio === 'all'? results :  results.filter(item => item.type === radio)
   
   const items = filterType.map((data) => {
@@ -46,7 +46,7 @@ function Search() {
         case data.type='text': 
             return (<Col md={4} key={data.id}><Textjokes  data={data}/></Col>)
         default: 
-            return (<Col md={4} key={data.id}><Textjokes  data={data}/></Col>)     
+            return null     
     }
 })
   return (

@@ -44,7 +44,7 @@ function ForgotPassword({ history }) {
             <div className="divider1"></div>
             <Form.Group className="emailaddress" controlId="formBasicEmail">
             <Form.Label className="fontlabel">EMAIL ADDRESS</Form.Label>
-            <Form.Control required onChange={onChangeHandler} name="email" type="email" placeholder="Enter email" />
+            <Form.Control className="fontfill" required onChange={onChangeHandler} name="email" type="email" placeholder="name@example.com" />
             </Form.Group>
                         
            

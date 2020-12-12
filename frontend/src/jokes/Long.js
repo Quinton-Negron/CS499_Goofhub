@@ -9,25 +9,24 @@ function Long() {
     const title = 'Long';
     //change category name based on data.
     const category = 'long';
-    const jokes = useFetch('jokes');
-    //console.log(jokes);
-    //field to release to site if it's true
-    const released = jokes.filter(joke => joke.release===true);
+    const jokes = useFetch('jokes',category.toLowerCase());
 
-    /*Filter jokes to a category for each page.
-    Category is in an array 
-    Displays on revsersed order*/
-    const results = released.filter(word => word.category.some(data => data === category));
-    const items = results.reverse().map((data) => {
+    //sort date by decreasing order
+    const sortedByDate = jokes.sort(function(b, a) {
+        var dateA = new Date(a.createdAt), dateB = new Date(b.createdAt);
+        return dateA - dateB;
+    });
+    
+    const items = sortedByDate.map((data) => {
         switch (data.type){
             case data.type='image': 
                 return (<Col md={4} key={data.id}><Imagejokes data={data}/></Col>) ;
             case data.type='video': 
                 return (<Col md={4} key={data.id}><Videojokes data={data}/></Col>) ;
             case data.type='text': 
-                return (<Col md={4} key={data.id}><Textjokes  data={data}/></Col>)
+                return (<Col md={4} key={data.id}><Textjokes  data={data}/></Col>) ;
             default: 
-                return (<Col md={4} key={data.id}><Textjokes  data={data}/></Col>)     
+                return null;     
         }
         
     })

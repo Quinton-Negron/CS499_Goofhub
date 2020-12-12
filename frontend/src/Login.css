@@ -15,10 +15,21 @@
     
 }
 
+.fontfill {
+    font-size: 20px;
+}
+
 .fontlabel {
     font-family: 'BuiltTitlingRg-Regular';
     color: white;
     font-size: 35px;
+    margin-bottom: -5px;
+}
+
+.fontText {
+    font-family: 'BuiltTitlingRg-Regular';
+    color: white;
+    font-size: 17px;
     margin-bottom: -5px;
 }
 

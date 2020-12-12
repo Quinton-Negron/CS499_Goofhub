@@ -42,13 +42,13 @@ function LogIn() {
             <div className="divider1"></div>
             <Form.Group className="emailaddress" controlId="formBasicEmail">
             <Form.Label className="fontlabel">email address</Form.Label>
-            <Form.Control required name="email" type="email" placeholder="name@example.com" />
+            <Form.Control className="fontfill" required name="email" type="email" placeholder="name@example.com" />
             </Form.Group>
                         
             <Form.Group controlId="formBasicPassword">
             <Form.Label className="fontlabel">password</Form.Label>
-            <Form.Control  required name="password" type="password" placeholder="Enter password" />
-            <Form.Text className="text-light">MUST BE 6-20 CHARACTERS LONG</Form.Text>
+            <Form.Control className="fontfill" required name="password" type="password" placeholder="Enter password" />
+            <Form.Text className="text-light fontText">MUST BE 6-20 CHARACTERS LONG</Form.Text>
             </Form.Group>
         
             <Button

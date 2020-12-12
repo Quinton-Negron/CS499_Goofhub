@@ -3,21 +3,26 @@ import firebase from "./firebase";
 
 
 //gets data from one table (one time)
-export function useFetch(table) {
+//used in jokes pages
+//gets data from one table (realtime) where jokes are released and in a certain category
+export function useFetch(table,category) {
     const [jokes, setJokes] = useState([]);
     useEffect(() => {
+        
         firebase.firestore()
             .collection(table)
-            .orderBy('createdAt','asc')
+            .where('release','==', true)
+            .where('category','array-contains', category)
             .get().then((snapshot) => {
                 const newJokes = snapshot.docs.map((doc) => ({
                     id: doc.id,...doc.data()
                     
                 }))
-
+  
                 setJokes(newJokes);
             })
-    }, [table])
+           
+    }, [table,category])
     return jokes
 }
 
@@ -35,11 +40,25 @@ export function useGetUser(table, currentUserId) {
                   }))
                   setUsers(newUsers);
               })    
-      // eslint-disable-next-line
-  }, [table])
+  }, [table,currentUserId])
   return users
 }
-
+//used in profile, sign up
+export function useGetUsername(table) {
+    const [users, setUsers] = useState([]); 
+    useEffect(() => {
+            firebase.firestore()
+                .collection(table)
+                .onSnapshot((snapshot) => {
+                    const newUsers = snapshot.docs.map((doc) => ({
+                        id: doc.id,...doc.data()
+                    }))
+                    setUsers(newUsers);
+                })    
+        // eslint-disable-next-line
+    }, [table])
+    return users
+  }
 //used in admin(secret) page for new submitted jokes
 //get it realtime
 export function useSubmission(table) {

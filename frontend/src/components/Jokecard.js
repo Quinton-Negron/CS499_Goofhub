@@ -2,9 +2,9 @@ import React from 'react';
 import { Card, ResponsiveEmbed } from 'react-bootstrap';
 import './Jokecard.css';
 import {useGetUser} from '../firebase/useFetch';
-import LikeButton from '../like';
-import './RateReportShare.css'
-import PostFunctions from './postfunctions';
+//import LikeButton from '../like';
+//import './RateReportShare.css'
+//import PostFunctions from './postfunctions';
 
 
 
@@ -44,8 +44,8 @@ export function Textjokes({data}) {
                             
     			{/* </nav> */}
                 
-                <div className = "containerpost"><LikeButton/></div>
-                <PostFunctions/>
+               {/* <div className = "containerpost"><LikeButton/></div>
+                <PostFunctions/>*/}
             </Card.Text>
         </Card.Body>
         
@@ -83,9 +83,9 @@ export function Imagejokes({data}) {
                                 </div>
                             </div>
     			</nav>
-    		</body> */}
+    		</body> 
             <div className = "containerpost"><LikeButton/></div>
-                <PostFunctions/>
+                <PostFunctions/>*/}
             </Card.Text>
         </Card.Body>
             
@@ -129,9 +129,9 @@ export function Videojokes({data}) {
                          </div>
                     </div>
     			</nav>
-    		</body> */}
+    		</body> 
         <div className = "containerpost"><LikeButton/></div>
-                <PostFunctions/>
+                <PostFunctions/>*/}
         </Card.Text>
     </Card.Body>
     

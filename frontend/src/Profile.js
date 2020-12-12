@@ -2,7 +2,7 @@ import React, { useContext, useState } from "react";
 import { AuthContext } from "./auth/Auth";
 import { Row, Col, Form,Card, Button } from "react-bootstrap";
 import firebase from "./firebase/firebase";
-import {useGetUser} from "./firebase/useFetch";
+import {useGetUser /*, useGetUsername*/} from "./firebase/useFetch";
 import './Profile.css';
 
 const Profile = () => {
@@ -11,6 +11,7 @@ const Profile = () => {
   const currentUserId = currentUser ? currentUser.uid : null;
   //get user from data cross checking authenticated userID
   const users = useGetUser('users',currentUserId);
+  //const otherUser = useGetUsername('users');
 
   const [name, setName] = useState("");
   const [newEmail, setnewEmail] = useState("");
@@ -29,6 +30,12 @@ const Profile = () => {
       setName("");
       return false;
     }
+    //cannot use name already in database
+    /*if(otherUser.some(data => data.username.toLowerCase() === name.toLowerCase())){
+      alert('Goof Name already in use!');
+      setName("");
+      return false;
+    }*/
 
     const updateUsername = {
       username: name,
@@ -42,7 +49,7 @@ const Profile = () => {
           displayName: name
           });
     }).then(() => {
-        alert("Username has changed.");
+        alert("Goof name has changed.");
         window.location.reload();
     }).catch((error) => {alert(error.message);
     });
@@ -115,7 +122,8 @@ const Profile = () => {
       <Row key={items.id}>
         <Col md={3} className="mt-5 align-items-center ">
           <img
-            src={currentUser.photoURL}
+            src="https://firebasestorage.googleapis.com/v0/b/goofhub-team.appspot.com/o/profilepic.png?alt=media&token=d554c921-c31f-4592-8abf-78aca34a7e9d"
+                //{currentUser.photoURL}
             alt="Profile"
             className="rounded-circle proimg-fluid"
           />

@@ -22,16 +22,14 @@ function Plus18() {
     const getAge = birthDate => Math.floor((new Date() - new Date(birthDate).getTime()) / 3.15576e+10)
 
     //get jokes from data
-    const jokes = useFetch('jokes');
-    //console.log(jokes);
+    const jokes = useFetch('jokes',category.toLowerCase());
+    //sort date by decreasing order
+    const sortedByDate = jokes.sort(function(b, a) {
+        var dateA = new Date(a.createdAt), dateB = new Date(b.createdAt);
+        return dateA - dateB;
+    });
 
-    //field to release to site if it's true
-    const released = jokes.filter(joke => joke.release===true);
-
-    /*Filter jokes to a category for each page. 
-    Displays on revsersed order*/
-    const results = released.filter(word => word.category.some(data => data === category));
-    const items = results.reverse().map((data) => {
+       const items = sortedByDate.map((data) => {
         switch (data.type){
             case data.type='image': 
                 return (<Col md={4} key={data.id}><Imagejokes data={data}/></Col>) ;

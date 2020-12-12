@@ -4,6 +4,7 @@ import './Login.css'
 import { Card,Row, Container, Button, Form, Col } from 'react-bootstrap';
 import { AuthContext } from "./auth/Auth";
 import firebase from "./firebase/firebase";
+//import { useGetUsername } from "./firebase/useFetch";
 
 function SignUp() {
     
@@ -21,15 +22,32 @@ function SignUp() {
     }
     //const regex = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,20}$/;//6-20 char, 1 num dig, 1 lower, 1 upper
     const regex = /^\s*$/;//regular expression for blank spaces
+    //const otherUser = useGetUsername('users');
     const handleSignUp = useCallback(async event => {
         event.preventDefault();
         const { email, password, first, last, dob, username } = event.target.elements;
        
         const newDate = changeDateFormat(dob.value);
+        if(regex.test(first.value) === true) {
+            alert('Invalid first name!')
+            return false;
+        }
+        if(regex.test(last.value) === true) {
+            alert('Invalid last name!')
+            return false;
+        }
+        if(regex.test(username.value) === true) {
+            alert('Invalid Goof name!')
+            return false;
+        }
+        //cannot use name already in database
+       /* if(otherUser.map(data => data.username.toLowerCase() === (username.value).toLowerCase())){
+            alert('Goof Name already in use!');
+            return false;
+        }*/
         if(regex.test(password.value) === true) {
             alert('Invalid password!')
-            return false;
-            
+            return false;  
         }
         try {
           firebase
@@ -84,35 +102,35 @@ function SignUp() {
                 <Form.Label className="fontlabel">Name</Form.Label>
                 <Form.Row >
                     <Col>
-                    <Form.Control required name="first" type="first" placeholder="First name" />
+                    <Form.Control className="fontfill" required name="first" type="first" placeholder="First name" />
                     </Col>
                     <Col>
-                    <Form.Control required name="last" type="last" placeholder="Last name" />
+                    <Form.Control className="fontfill" required name="last" type="last" placeholder="Last name" />
                     </Col>
                 </Form.Row>
             </Form.Group>
 
             <Form.Group controlId="dob">
             <Form.Label className="fontlabel">Date of Birth</Form.Label>
-            <Form.Control  required name="dob" type="date" placeholder="MM/DD/YYYY" />
+            <Form.Control className="fontfill" required name="dob" type="date" placeholder="MM/DD/YYYY" />
             </Form.Group>
 
             <Form.Group>
             <Form.Label className="fontlabel">Goof Name</Form.Label>
-            <Form.Control required name="username" type="username" placeholder="John Doe or an alias" />
-            <Form.Text className="text-light">USED FOR CREDITING JOKES SUBMISSION</Form.Text>
+            <Form.Control className="fontfill" required name="username" type="username" placeholder="John Doe or an alias" />
+            <Form.Text className="text-light fontText">USED FOR CREDITING JOKE SUBMISSION</Form.Text>
             </Form.Group>
 
             <Form.Group className="emailaddress" controlId="formBasicEmail">
             <Form.Label className="fontlabel">email address</Form.Label>
-            <Form.Control required name="email" type="email" placeholder="name@example.com" />
-            <Form.Text className="text-light">YOUR EMAIL IS SAFE WITH US</Form.Text>
+            <Form.Control className="fontfill" required name="email" type="email" placeholder="name@example.com" />
+            <Form.Text className="text-light fontText">YOUR EMAIL IS SAFE WITH US</Form.Text>
             </Form.Group>
             
             <Form.Group controlId="formBasicPassword">
             <Form.Label className="fontlabel">password</Form.Label>
-            <Form.Control  required name="password" type="password" placeholder="Enter password" />
-            <Form.Text className="text-light">MUST BE 6-20 CHARACTERS LONG, CONTAINS AT LEAST ONE NUMERIC DIGIT, ONE UPPERCASE, ONE LOWERCASE LETTER</Form.Text>
+            <Form.Control className="fontfill" required name="password" type="password" placeholder="Enter password" />
+            <Form.Text className="text-light fontText">MUST BE 6-20 CHARACTERS LONG, CONTAINS AT LEAST ONE NUMERIC DIGIT, ONE UPPERCASE, ONE LOWERCASE LETTER</Form.Text>
             </Form.Group>
             
         
