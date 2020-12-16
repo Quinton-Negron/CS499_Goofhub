@@ -67,13 +67,8 @@ function Cards1() {
     </a>
   </Card>
 
-
-{/* </Col></Row> */}
-
 <br></br>
-  {/* <Row  >
-  <Col> */}
-
+ 
 {currentUser && !(getAge(Uage) >= 18 && getAge(Uage) <= 110)? null:
      
 
@@ -89,12 +84,6 @@ function Cards1() {
 }</CardDeck>
 </Col></Row>
 
-{/* <Col></Col>
-<Col></Col>
-<Col></Col>
-<Col></Col>
-<Col></Col> */}
-{/* </Col></Row> */}
 
 
 

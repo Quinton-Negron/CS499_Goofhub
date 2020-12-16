@@ -4,7 +4,6 @@
     vertical-align: middle;
     text-align: center;
     border-radius: 3rem;
-    /*padding-left: 25px;*/
     margin-right: -10px;
     margin-left: -10px;
     margin-top: 40px;
@@ -13,18 +12,14 @@
 .proCardBody {
     background-color: #14140636 !important;
     border-radius: 5rem;
-    /*width: 450px;*/
     margin: 30px;
     padding-left: 20px;
     padding-right: 20px;
 }
 .proSideCard {
     background-color: #14140646 !important;
-    /* box-shadow: 1px 1px 1px 1px #b7b210; */
     border: none;
-    margin-left: 20px;
-    /* margin-right: 20px; */
-    
+    margin-left: 20px;   
 }
 
 .proAddBtn {

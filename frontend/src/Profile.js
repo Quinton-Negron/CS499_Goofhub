@@ -2,7 +2,7 @@ import React, { useContext, useState } from "react";
 import { AuthContext } from "./auth/Auth";
 import { Row, Col, Form,Card, Button } from "react-bootstrap";
 import firebase from "./firebase/firebase";
-import {useGetUser /*, useGetUsername*/} from "./firebase/useFetch";
+import {useGetUser} from "./firebase/useFetch";
 import './Profile.css';
 
 const Profile = () => {
@@ -30,13 +30,7 @@ const Profile = () => {
       setName("");
       return false;
     }
-    //cannot use name already in database
-    /*if(otherUser.some(data => data.username.toLowerCase() === name.toLowerCase())){
-      alert('Goof Name already in use!');
-      setName("");
-      return false;
-    }*/
-
+    
     const updateUsername = {
       username: name,
     };
@@ -95,10 +89,10 @@ const Profile = () => {
     setnewEmail("");
   }
 
-  //const regex2 = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,20}$/;//6-20 char, 1 num dig, 1 lower, 1 upper
+  const regex2 = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,20}$/;//6-20 char, 1 num dig, 1 lower, 1 upper
   //change password 
   function changePassword(currentPassword, newPassword) {
-    const nPassword = (regex.test(newPassword) === true) ? null : newPassword;
+    const nPassword = (regex2.test(newPassword) === true) ? null : newPassword;
     
     reauthenticate(currentPassword)
       .then(() => {
@@ -122,8 +116,7 @@ const Profile = () => {
       <Row key={items.id}>
         <Col md={3} className="mt-5 align-items-center ">
           <img
-            src="https://firebasestorage.googleapis.com/v0/b/goofhub-team.appspot.com/o/profilepic.png?alt=media&token=d554c921-c31f-4592-8abf-78aca34a7e9d"
-                //{currentUser.photoURL}
+            src={currentUser.photoURL}
             alt="Profile"
             className="rounded-circle proimg-fluid"
           />

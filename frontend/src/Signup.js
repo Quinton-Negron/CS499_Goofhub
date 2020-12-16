@@ -4,7 +4,6 @@ import './Login.css'
 import { Card,Row, Container, Button, Form, Col } from 'react-bootstrap';
 import { AuthContext } from "./auth/Auth";
 import firebase from "./firebase/firebase";
-//import { useGetUsername } from "./firebase/useFetch";
 
 function SignUp() {
     
@@ -20,9 +19,8 @@ function SignUp() {
     
         return month + '/' + day + '/' + year;
     }
-    //const regex = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,20}$/;//6-20 char, 1 num dig, 1 lower, 1 upper
+    const regex1 = /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{6,20}$/;//6-20 char, 1 num dig, 1 lower, 1 upper
     const regex = /^\s*$/;//regular expression for blank spaces
-    //const otherUser = useGetUsername('users');
     const handleSignUp = useCallback(async event => {
         event.preventDefault();
         const { email, password, first, last, dob, username } = event.target.elements;
@@ -40,12 +38,8 @@ function SignUp() {
             alert('Invalid Goof name!')
             return false;
         }
-        //cannot use name already in database
-       /* if(otherUser.map(data => data.username.toLowerCase() === (username.value).toLowerCase())){
-            alert('Goof Name already in use!');
-            return false;
-        }*/
-        if(regex.test(password.value) === true) {
+       
+        if(regex1.test(password.value) === true) {
             alert('Invalid password!')
             return false;  
         }

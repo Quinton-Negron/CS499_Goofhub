@@ -70,7 +70,6 @@ export default function SubmitImage() {
                 // complete function ....
                 firebase.storage()
                   .ref(`images/${imageName}`)
-                  //.child(image.name) // Upload the file and metadata
                   .getDownloadURL() // get download url
                   .then(url => {
                     console.log(url);
