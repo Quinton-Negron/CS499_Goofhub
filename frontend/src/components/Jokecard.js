@@ -2,7 +2,7 @@ import React from 'react';
 import { Card, ResponsiveEmbed } from 'react-bootstrap';
 import './Jokecard.css';
 import {useGetUser} from '../firebase/useFetch';
-
+import LikeButton from './likes';
 
 //Cards for text jokes
 export function Textjokes({data}) {
@@ -26,7 +26,10 @@ export function Textjokes({data}) {
             <Card.Text>
             </Card.Text>
         </Card.Body>
-        
+        <Card.Footer className="bg-transparent">
+            <LikeButton joke={data}/>
+            {data.likeCount? data.likeCount : 0}
+        </Card.Footer>
     </Card>
 );
 }
@@ -52,7 +55,10 @@ export function Imagejokes({data}) {
             <Card.Text>
             </Card.Text>
         </Card.Body>
-            
+        <Card.Footer className="bg-transparent">
+            <LikeButton joke={data}/>
+            {data.likeCount? data.likeCount : 0}
+        </Card.Footer>   
     </Card>
     );
 }
@@ -84,7 +90,10 @@ export function Videojokes({data}) {
         <Card.Text>
         </Card.Text>
     </Card.Body>
-    
+    <Card.Footer className="bg-transparent">
+            <LikeButton joke={data}/>
+            {data.likeCount? data.likeCount : 0}
+    </Card.Footer>
     </Card>
     );
 }

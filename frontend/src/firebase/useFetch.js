@@ -26,6 +26,26 @@ export function useFetch(table,category) {
     return jokes
 }
 
+//likes
+export function useFetchRealtime(joke, currentUserId) {
+    const [jokes, setJokes] = useState([]);
+    useEffect(() => {
+        
+        firebase.firestore()
+          .collection('likes')
+          .where('uid','==',currentUserId)
+          .where('jokeId','==',joke.id).limit(1)
+          .onSnapshot((snapshot) => {
+              const newJokes = snapshot.docs.map((doc) => ({
+                  id: doc.id,...doc.data()             
+              }))
+              setJokes(newJokes);
+            })
+        
+    }, [joke, currentUserId])
+    return jokes
+  }
+  
 //used in submitJoke, profile, jokecard
 //get it realtime
 export function useGetUser(table, currentUserId) {
