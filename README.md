@@ -1,4 +1,4 @@
-# CS499_Goofhub
+# Goofhub
 ### Ricardo Daniels
 ### Mei Tak Lee
 ### Quinton Negron
