@@ -1,7 +1,7 @@
 # Goofhubb
 ### Ricardo Daniels
 ### Mei Tak Lee
-### Quinton Negron
+### Quinton Negron -
 ### Denice Veluz
 
 Frontend: React-Bootstrap Web App <br />
