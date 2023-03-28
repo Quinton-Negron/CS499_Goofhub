@@ -1,4 +1,4 @@
-# Goofhubb
+# Goofhub
 ### Ricardo Daniels
 ### Mei Tak Lee
 ### Quinton Negron
